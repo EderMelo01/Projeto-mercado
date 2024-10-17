@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hZ9jRk8a3cA=",
+  "success": true,
+  "projectFilePath": "c:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\Main\\main.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ederm\\.nuget\\packages\\fsharp.core\\9.0.100-beta.24422.2\\fsharp.core.9.0.100-beta.24422.2.nupkg.sha512"
+  ],
+  "logs": []
+}

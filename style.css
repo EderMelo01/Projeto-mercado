@@ -1,0 +1,11 @@
+form label{
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.button{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: #222;
+}
