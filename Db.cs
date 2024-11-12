@@ -9,9 +9,9 @@ namespace PrimeiroProjeto
 {
     public class Db
     {
-        public async Task<MySqlDataReader> getQuery(String command){
+        public MySqlDataReader getQuery(String command){
             MySqlConnection conexao= BancoDados.banco.conexao;
-            MySqlCommand selectCommand = new MySqlCommand(command, conexao);
+            MySqlCommand selectCommand =  new MySqlCommand(command, conexao);
             MySqlDataReader resultado = selectCommand.ExecuteReader();
             return resultado;
         }
