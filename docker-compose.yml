@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password # Senha para o usuário root
+      MYSQL_DATABASE: mercado          # Nome do banco de dados a ser criado
+      MYSQL_USER: meu_usuario            # Nome do usuário a ser criado
+      MYSQL_PASSWORD: minha_senha        # Senha para o usuário acima
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql      # Monta volume para persistir os dados

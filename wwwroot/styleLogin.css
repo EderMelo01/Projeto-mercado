@@ -1,0 +1,31 @@
+
+.caixaLogin{
+    background-color: rgb(7, 61, 180);
+    height: 500px;
+    width: 450px;
+    border-radius: 30px;
+    display:grid;
+    place-items: center;
+}
+
+
+input {
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 4px;
+    border: transparent;
+    width: 50%;
+    margin-left: 20%;
+}
+button{
+    width: 50%;
+    background-color: rgb(78, 78, 78);
+    border-radius: 30px;
+    margin-left: 20%;
+    
+}
+form{
+    width: 100%;
+}
+
