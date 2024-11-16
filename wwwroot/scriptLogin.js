@@ -6,24 +6,25 @@ async function verificacao(event){
         senha: document.getElementById("senha").value
     };
     try{
-        const login= await fetch("/api/login",
+        const login= await fetch("/app/login",
             {
-                method: "GET",
+                method: "POST",
+                body: JSON.stringify(res),
                 headers: {
                     "content-type": "application/json",
                 }
             }
         );
         if(!login.ok){
-            throw new Error(await response.text());
+            throw new Error(await login.text());
         }
 
-        const result= await login.body();
+        const result= await login.text();
         console.log(result);
     }
     catch(error)
     {
-        console.error("Mensagem erro: "+ error);
+        console.error(error);
     }
 }    
 

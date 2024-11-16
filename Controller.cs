@@ -12,8 +12,8 @@ namespace PrimeiroProjeto
         public Controller(Db db){
             this.db= db;
         }
-         public async Task<MySqlDataReader> getQuery(String command){
-            return await db.getQuery(command);
+         public async Task<List<User>> GetQuery(String command){
+            return db.GetQuery(command);
          }
         
     }
