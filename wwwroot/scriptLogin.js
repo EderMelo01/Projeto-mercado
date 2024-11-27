@@ -1,6 +1,5 @@
 async function verificacao(event){
     event.preventDefault();
-
     const res = {
         nome: document.getElementById("name").value,
         senha: document.getElementById("senha").value
@@ -11,7 +10,7 @@ async function verificacao(event){
                 method: "POST",
                 body: JSON.stringify(res),
                 headers: {
-                    "content-type": "application/json",
+                    "Content-Type": "application/json",
                 }
             }
         );
@@ -20,7 +19,9 @@ async function verificacao(event){
         }
 
         const result= await login.text();
-        console.log(result);
+        alert(result);
+        result == "Logado com sucesso"? window.location.href = "telaInicial.html": "";
+
     }
     catch(error)
     {

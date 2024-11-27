@@ -12,9 +12,12 @@ namespace PrimeiroProjeto
         public Controller(Db db){
             this.db= db;
         }
-         public async Task<List<User>> GetQuery(String command){
-            return db.GetQuery(command);
-         }
-        
+        public async Task<User> GetUserByName(string name){
+            return db.GetUserByName(name);
+        }
+        public void Upgrade(string command)
+        {
+            db.Upgrade(command);
+        }
     }
 }

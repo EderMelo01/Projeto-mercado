@@ -12,27 +12,27 @@ namespace PrimeiroProjeto
 {
     public class Db
     {
-        public List<User> GetQuery(string command)
+        public User GetUserByName(string name)
         {
             MySqlConnection conexao = BancoDados.Banco.Conexao();
-            MySqlCommand selectCommand = new MySqlCommand(command, conexao);
+            MySqlCommand selectCommand = new MySqlCommand($"SELECT * FROM USER WHERE(nome= '{name}' );", conexao);
             MySqlDataReader result = selectCommand.ExecuteReader();
             List<List<dynamic>> li=[];
-            List<User> users=[];
+            User user= new User();
+            if(!result.HasRows){
+                conexao.Close();
+                return null;
+            }
             while (result.Read())
                 {
-                    string nome= result.GetString("nome");
-                    string senha= result.GetString("senha");
-                    bool logado= result.GetInt32("logado")==0? false: true;
-                    bool bloqueado= result.GetInt32("bloqueado")==0? false: true;
-                    li.Add([nome, senha, logado, bloqueado]);
+                    user.nome= result.GetString("nome");
+                    user.senha= result.GetString("senha");
+                    user.logado= result.GetInt32("logado")==0? false: true;
+                    user.bloqueado= result.GetInt32("bloqueado")==0? false: true;
+                    user.data_nascimento= result.GetDateTime("data_nascimento").ToString();
                 }
-            li.ForEach((result)=>{
-                users.Add(new User(result[0], result[1], result[2], result[3]));
-            });   //// fazer um for normal!!!!! e retornar a lista de user 
-            
             conexao.Close();
-            return users;
+            return user;
         }
         public void Upgrade(string command)
         {

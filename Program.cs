@@ -16,7 +16,7 @@ var app = builder.Build();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-Db db = new Db();
+Db control = new Db();
 
 app.MapGet("/app/version", () => "0.0.1");
 
@@ -29,56 +29,69 @@ app.MapPost("/app/login", async (context) =>
         await context.Response.WriteAsync("Dados Inválidos");
         return;
     }
-    var users = db.GetQuery($"SELECT * FROM USER WHERE(nome= '{pessoa.nome}' );");
-
-    if (users[0].bloqueado)
+    var users = control.GetUserByName(pessoa.nome);
+    if (users == null)
     {
-        await context.Response.WriteAsync("Usuário bloqueado");
+        await context.Response.WriteAsync("Usuário não existe");
     }
     else
     {
-        if (users[0].senha == pessoa.senha && !users[0].logado)
+        if (users.bloqueado)
         {
-
-            db.Upgrade($"UPDATE USER SET logado= 1 WHERE nome = '{users[0].nome}'");
-            await context.Response.WriteAsync("Logado com sucesso");
-
-        }
-        else if (users[0].senha != pessoa.senha)
-        {
-            await context.Response.WriteAsync("Senha incorreta");
+            await context.Response.WriteAsync("Usuário bloqueado");
         }
         else
         {
-            await context.Response.WriteAsync("Usuário já logado tente mais tarde, ou contate um admin");
+            if (users.senha == pessoa.senha && !users.logado)
+            {
+
+                control.Upgrade($"UPDATE USER SET logado= 1 WHERE nome = '{users.nome}'");
+                await context.Response.WriteAsync("Logado com sucesso");
+
+            }
+            else if (users.logado)
+            {
+                await context.Response.WriteAsync("Usuário já logado tente mais tarde, ou contate um admin");
+            }
+            else
+            {
+                await context.Response.WriteAsync("Senha incorreta");
+            }
         }
     }
+
 });
 
-/*var users = db.GetQuery($"SELECT * FROM USER WHERE(nome= 'Eder' );");
-
-if (users[0].bloqueado)
-{
-    Console.WriteLine("Usuário bloqueado");
-}
-else
-{
-    if (users[0].senha == "1235" && !users[0].logado)
+/*var users = db.GetUserByName("Eder");
+    if (users == null)
     {
-
-        db.Upgrade($"UPDATE USER SET logado= 1 WHERE nome = '{users[0].nome}'");
-        Console.WriteLine("Logado com sucesso");
-
-    }
-    else if (users[0].senha != "1235")
-    {
-        Console.WriteLine("Senha incorreta");
+        Console.WriteLine("Usuário não existe");
     }
     else
     {
-        Console.WriteLine("Usuário já logado tente mais tarde, ou contate um admin");
-    }
-}*/
+        if (users.bloqueado)
+        {
+            Console.WriteLine("Usuário bloqueado");
+        }
+        else
+        {
+            if (users.senha == "1235" && !users.logado)
+            {
+
+                db.Upgrade($"UPDATE USER SET logado= 1 WHERE nome = '{users.nome}'");
+                Console.WriteLine("Logado com sucesso");
+
+            }
+            else if (users.senha != "1235")
+            {
+                Console.WriteLine("Senha incorreta");
+            }
+            else
+            {
+                Console.WriteLine("Usuário já logado tente mais tarde, ou contate um admin");
+            }
+        }
+    }*/
 
 
 app.Run();
