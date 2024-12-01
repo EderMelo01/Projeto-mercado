@@ -1,3 +1,17 @@
+html {
+    height: 100vh;
+}
+
+html body, html main {
+    margin: 0px;
+    height: 100%;
+}
+
+html main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .caixaLogin{
     background-color: rgb(7, 61, 180);

@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\cadastroProduto.html",
+      "PackagePath": "staticwebassets\\cadastroProduto.html"
+    },
+    {
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\scriptLogin.js",
+      "PackagePath": "staticwebassets\\scriptLogin.js"
+    },
+    {
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\scriptProduto.js",
+      "PackagePath": "staticwebassets\\scriptProduto.js"
+    },
+    {
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\style.css",
+      "PackagePath": "staticwebassets\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\styleLogin.css",
+      "PackagePath": "staticwebassets\\styleLogin.css"
+    },
+    {
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\telaInicial.html",
+      "PackagePath": "staticwebassets\\telaInicial.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PrimeiroProjeto.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PrimeiroProjeto.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PrimeiroProjeto.props",
+      "PackagePath": "build\\PrimeiroProjeto.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PrimeiroProjeto.props",
+      "PackagePath": "buildMultiTargeting\\PrimeiroProjeto.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PrimeiroProjeto.props",
+      "PackagePath": "buildTransitive\\PrimeiroProjeto.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

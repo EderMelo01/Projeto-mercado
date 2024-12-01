@@ -8,31 +8,38 @@ namespace PrimeiroProjeto
 {
     public class BancoDados
     {
-        string connectionString = "Server=mysql;" +
-        "Database=mercado;" +"Uid=[meu_usuario]@[mysql_container];" +"Pwd=minha_senha;";
+        readonly string connectionString = "Server=localhost;Port=3306;Database=mercado;Uid=meu_usuario;Pwd=minha_senha;";
         private readonly MySqlConnection conn;
-        
-        private static BancoDados instancia= null;
-        private BancoDados(){
-            conn= new MySqlConnection(connectionString);
-            if(conn==null){
+        private bool conectado = false;
+
+        private static BancoDados? instancia = null;
+        private BancoDados()
+        {
+            conn = new MySqlConnection(connectionString);
+            if (conn == null)
+            {
                 throw new Exception("erro");
             }
-            conn.Open();
         }
-        public static BancoDados banco
+        public static BancoDados Banco
         {
-            get{
-                if(instancia==null){
-                    instancia= new BancoDados();
-                }
+            get
+            {
+                instancia ??= new BancoDados();
                 return instancia;
             }
         }
-        public MySqlConnection conexao{
-            get{
-                return conexao;
-            }
+        public MySqlConnection Conexao()
+        {
+
+            conn.Open();
+            return conn;
         }
+        public void Desconecta()
+        {
+            conn.Close();
+            conectado = false;
+        }
+
     }
 }
