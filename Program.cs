@@ -42,7 +42,8 @@ app.MapPost("/app/login", async (context) =>
         }
         else
         {
-            if (users.senha == pessoa.senha && !users.logado)
+            var senhaValida= BCrypt.Net.BCrypt.Verify(pessoa.senha, users.senha);
+            if (senhaValida&& !users.logado)
             {
 
                 control.Upgrade($"UPDATE USER SET logado= 1 WHERE nome = '{users.nome}'");
@@ -62,44 +63,5 @@ app.MapPost("/app/login", async (context) =>
 
 });
 
-/*var users = db.GetUserByName("Eder");
-    if (users == null)
-    {
-        Console.WriteLine("Usuário não existe");
-    }
-    else
-    {
-        if (users.bloqueado)
-        {
-            Console.WriteLine("Usuário bloqueado");
-        }
-        else
-        {
-            if (users.senha == "1235" && !users.logado)
-            {
-
-                db.Upgrade($"UPDATE USER SET logado= 1 WHERE nome = '{users.nome}'");
-                Console.WriteLine("Logado com sucesso");
-
-            }
-            else if (users.senha != "1235")
-            {
-                Console.WriteLine("Senha incorreta");
-            }
-            else
-            {
-                Console.WriteLine("Usuário já logado tente mais tarde, ou contate um admin");
-            }
-        }
-    }*/
-
 
 app.Run();
-
-/*while (result.Read())
-        {
-            var nome = result.GetString("nome");
-            var senha = result.GetString("senha");
-            list.Add($"nome: {nome}, senha: {senha}");
-        }
-        await context.Response.WriteAsJsonAsync(list[0]);*/

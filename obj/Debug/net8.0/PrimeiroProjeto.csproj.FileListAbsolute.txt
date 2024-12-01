@@ -122,3 +122,4 @@ C:\Users\ederm\OneDrive\Documentos\C#\PrimeiroProjeto\obj\Debug\net8.0\staticweb
 C:\Users\ederm\OneDrive\Documentos\C#\PrimeiroProjeto\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\ederm\OneDrive\Documentos\C#\PrimeiroProjeto\obj\Debug\net8.0\Primeiro.058784A0.Up2Date
 C:\Users\ederm\OneDrive\Documentos\C#\PrimeiroProjeto\bin\Debug\net8.0\PrimeiroProjeto.staticwebassets.runtime.json
+C:\Users\ederm\OneDrive\Documentos\C#\PrimeiroProjeto\bin\Debug\net8.0\BCrypt.Net-Next.dll

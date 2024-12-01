@@ -48,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>8feqmqvxuc</Fingerprint>
-      <Integrity>hHkyDKxZ6idZbE5oEyBYTZ5T1PPflOhvpWDCBbqjfLI=</Integrity>
+      <Fingerprint>875gn9qn9j</Fingerprint>
+      <Integrity>rOayRM4+VITBcdsXJIJBD1Xr4HZElseRdO/QLPvFkZQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\scriptLogin.js'))</OriginalItemSpec>
@@ -120,8 +120,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>5ipweew5fc</Fingerprint>
-      <Integrity>47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</Integrity>
+      <Fingerprint>zd3skyf12k</Fingerprint>
+      <Integrity>J4zA+J+iXYshJfc2FWkNV7BS7Sxldnk5RwzgsuUaheY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\telaInicial.html'))</OriginalItemSpec>
