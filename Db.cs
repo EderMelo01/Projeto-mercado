@@ -17,7 +17,6 @@ namespace PrimeiroProjeto
             MySqlConnection conexao = BancoDados.Banco.Conexao();
             MySqlCommand selectCommand = new MySqlCommand($"SELECT * FROM USER WHERE(nome= '{name}' );", conexao);
             MySqlDataReader result = selectCommand.ExecuteReader();
-            List<List<dynamic>> li=[];
             User user= new User();
             if(!result.HasRows){
                 conexao.Close();
