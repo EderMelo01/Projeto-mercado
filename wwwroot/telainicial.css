@@ -1,0 +1,209 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+.header-fixo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Alinha o texto ao centro */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-fixo h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.menu-lateral {
+    width: 80px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    height: 100vh;
+    position: fixed;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menu-lateral ul li {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-lateral ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.menu-lateral ul li a:hover {
+    background-color: #444;
+}
+
+.menu-lateral ul li a i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.conteudo {
+    flex: 1;
+    margin-left: 80px;
+    padding: 20px;
+    margin-top: 60px; /* Ajuste para o cabeçalho fixo */
+}
+
+.cartoes-resumo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.cartao {
+    flex: 1;
+    margin: 0 10px;
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+}
+
+.cartao.verde {
+    background-color: #4CAF50;
+}
+
+.cartao.amarelo {
+    background-color: #FFC107;
+}
+
+.cartao.vermelho {
+    background-color: #F44336;
+}
+
+.cartao h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.cartao p {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.indicador {
+    font-size: 18px;
+}
+
+.indicador.positivo {
+    color: #4CAF50;
+}
+
+.indicador.negativo {
+    color: #F44336;
+}
+
+.botoes-acesso-rapido {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.botao {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: #f0f0f0;
+}
+
+.secao-promocao {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e7f3ff;
+    padding: 20px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.secao-promocao .texto {
+    flex: 2;
+}
+
+.secao-promocao .texto h2 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.secao-promocao .texto p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.secao-promocao .texto ul {
+    margin: 10px 0;
+    padding-left: 20px;
+    color: #555;
+}
+
+.secao-promocao .texto button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.secao-promocao .texto button:hover {
+    background-color: #0056b3;
+}
+
+.secao-promocao .ilustracao img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.ilustracao img {
+    max-width: 100%;         /* Ajusta a largura da imagem para não ultrapassar o tamanho do contêiner */
+    height: auto;            /* Mantém a proporção da imagem */
+    display: block;          /* Remove o espaçamento abaixo da imagem */
+    margin: 0 auto;          /* Centraliza a imagem horizontalmente */
+    max-height: 150px;       /* Define uma altura máxima para a imagem (ajuste conforme necessário) */
+    object-fit: contain;     /* Garante que a imagem seja contida sem cortar */
+}
+

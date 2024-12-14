@@ -1,36 +1,32 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\cadastroProduto.html",
+      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\cadastroProduto.html",
       "PackagePath": "staticwebassets\\cadastroProduto.html"
     },
     {
-      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\index.html",
+      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\scriptLogin.js",
+      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\scriptLogin.js",
       "PackagePath": "staticwebassets\\scriptLogin.js"
     },
     {
-      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\scriptProduto.js",
+      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\scriptProduto.js",
       "PackagePath": "staticwebassets\\scriptProduto.js"
     },
     {
-      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\style.css",
+      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\style.css",
       "PackagePath": "staticwebassets\\style.css"
     },
     {
-      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\styleLogin.css",
+      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\styleLogin.css",
       "PackagePath": "staticwebassets\\styleLogin.css"
     },
     {
-      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\PrimeiroProjeto\\wwwroot\\telaInicial.html",
+      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\telaInicial.html",
       "PackagePath": "staticwebassets\\telaInicial.html"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PrimeiroProjeto.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PrimeiroProjeto.Microsoft.AspNetCore.StaticWebAssets.props",

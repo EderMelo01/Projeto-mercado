@@ -1,11 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Painel Administrativo</title>
+    <link rel="stylesheet" href="painel_admin_styles.css">
+    <link rel="stylesheet" href="telainicial.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    
+    <header class="header-fixo">
+        <h1>Painel Administrativo</h1>
+    </header>
+    <div class="menu-lateral">
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-cash-register"></i> Venda</a></li>
+            <li><a href="#"><i class="fas fa-receipt"></i> Cupom Fiscal</a></li>
+            <li><a href="#"><i class="fas fa-box"></i> Produtos</a></li>
+            <li><a href="#"><i class="fas fa-user"></i> Cliente</a></li>
+            <li><a href="#"><i class="fas fa-truck"></i> Fornecedor</a></li>
+        </ul>
+    </div>
+    <div class="conteudo">
+        <div class="cartoes-resumo">
+            <div class="cartao verde">
+                <h3>Vendas no ano</h3>
+                <p>R$ 357,25</p>
+                <span class="indicador positivo">&#9650; Positivo</span>
+            </div>
+            <div class="cartao verde">
+                <h3>Vendas no mês</h3>
+                <p>R$ 357,25</p>
+                <span class="indicador positivo">&#9650; Positivo</span>
+            </div>
+            <div class="cartao amarelo">
+                <h3>Margem Bruta no mês</h3>
+                <p>R$ 325,55</p>
+            </div>
+            <div class="cartao vermelho">
+                <h3>Despesas no mês</h3>
+                <p>R$ -70,00</p>
+                <span class="indicador negativo">&#9660; Negativo</span>
+            </div>
+        </div>
+
+        <div class="botoes-acesso-rapido">
+            <div class="botao">
+                <i class="fas fa-cash-register"></i>
+                <p>Venda (PDV)</p>
+            </div>
+            <div class="botao">
+                <i class="fas fa-receipt"></i>
+                <p>Cupom Fiscal</p>
+            </div>
+            <div class="botao">
+                <i class="fas fa-box"></i>
+                <p>Produtos</p>
+            </div>
+            <div class="botao">
+                <i class="fas fa-user"></i>
+                <p>Cliente</p>
+            </div>
+            <div class="botao">
+                <i class="fas fa-truck"></i>
+                <p>Fornecedor</p>
+            </div>
+        </div>
+
+        <div class="secao-promocao">
+            <div class="texto">
+                <h2>Quer ter controle total do seu negócio?</h2>
+                <p>Assine a versão paga do MaisSimples e tenha acesso a muito mais recursos:</p>
+                <ul>
+                    <li>Múltiplos Caixas e Espelho da Conta Corrente</li>
+                    <li>Controle de Usuários</li>
+                    <li>Contas a Pagar</li>
+                    <li>Mais Relatórios e Indicadores</li>
+                    <li>Vendas a Prazo (Crediário / Promissória)</li>
+                    <li>Suporte</li>
+                </ul>
+                <button>FAZER UPGRADE AGORA</button>
+            </div>
+            <div class="ilustracao">
+                <img src="Imagens\logo1.png.png" alt="Ilustração promocional">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
