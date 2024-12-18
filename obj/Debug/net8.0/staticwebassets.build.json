@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "P9bSRlX0p526Xq1fefwFmEehaAQbZxAjOXpiPyK5kt8=",
+  "Hash": "OjYBSlE6dOQ0TtpFwYijzhsC1+WCBYWJWiRzGYQBXM4=",
   "Source": "PrimeiroProjeto",
   "BasePath": "_content/PrimeiroProjeto",
   "Mode": "Default",
@@ -10,144 +10,1146 @@
     {
       "Name": "PrimeiroProjeto\\wwwroot",
       "Source": "PrimeiroProjeto",
-      "ContentRoot": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\",
       "BasePath": "_content/PrimeiroProjeto",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\cadastroProduto.html",
+      "Identity": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\cadastroProduto.html",
       "SourceId": "PrimeiroProjeto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\",
       "BasePath": "_content/PrimeiroProjeto",
-      "RelativePath": "cadastroProduto.html",
+      "RelativePath": "cadastroProduto#[.{fingerprint}]?.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "pzvauinsvg",
+      "Integrity": "dZZAtzLUkXkJS/RwGuQEWsueL3yom/pcDlcV49B6HQo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\cadastroProduto.html"
     },
     {
-      "Identity": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\cadastroUsers.html",
       "SourceId": "PrimeiroProjeto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\",
       "BasePath": "_content/PrimeiroProjeto",
-      "RelativePath": "index.html",
+      "RelativePath": "cadastroUsers#[.{fingerprint}]?.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "turyqzwcvp",
+      "Integrity": "hYdnpMb7APdeMuvAlo/XnyVkfaVHjmBulqdmRvt0vsQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\cadastroUsers.html"
+    },
+    {
+      "Identity": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\index.html",
+      "SourceId": "PrimeiroProjeto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\",
+      "BasePath": "_content/PrimeiroProjeto",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dprsbe1gem",
+      "Integrity": "v5HTV3MSH36oJD4wmWVcN8EQIJ0k13bLyhw+u4HMxbs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\scriptLogin.js",
+      "Identity": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptLogin.js",
       "SourceId": "PrimeiroProjeto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\",
       "BasePath": "_content/PrimeiroProjeto",
-      "RelativePath": "scriptLogin.js",
+      "RelativePath": "scriptLogin#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "875gn9qn9j",
+      "Integrity": "rOayRM4+VITBcdsXJIJBD1Xr4HZElseRdO/QLPvFkZQ=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scriptLogin.js"
     },
     {
-      "Identity": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\scriptProduto.js",
+      "Identity": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptPaginas.js",
       "SourceId": "PrimeiroProjeto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\",
       "BasePath": "_content/PrimeiroProjeto",
-      "RelativePath": "scriptProduto.js",
+      "RelativePath": "scriptPaginas#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "p3xhdzztn5",
+      "Integrity": "KzU6y8n5PsHVgSAoc87pJTSTsGxfd036LobbfqlCKJY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scriptPaginas.js"
+    },
+    {
+      "Identity": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptProduto.js",
+      "SourceId": "PrimeiroProjeto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\",
+      "BasePath": "_content/PrimeiroProjeto",
+      "RelativePath": "scriptProduto#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9g8pfjblhg",
+      "Integrity": "933BHWfaxTyMIqMFnoIhjYfU/s1lZO96tzGV/PzbQHY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scriptProduto.js"
     },
     {
-      "Identity": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\style.css",
+      "Identity": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptUsers.js",
       "SourceId": "PrimeiroProjeto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\",
       "BasePath": "_content/PrimeiroProjeto",
-      "RelativePath": "style.css",
+      "RelativePath": "scriptUsers#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "6kr718ozfv",
+      "Integrity": "Rog7IkwC4xd+1Bva5MCiy8NmGsWqAvtMGcOag1qj6TM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\scriptUsers.js"
+    },
+    {
+      "Identity": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\style.css",
+      "SourceId": "PrimeiroProjeto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\",
+      "BasePath": "_content/PrimeiroProjeto",
+      "RelativePath": "style#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oeo2zyq9ay",
+      "Integrity": "8Gy5OCYHAAPhe9X+zkZZ7xbPoc4+pCwHtmoDZG0fIJM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\style.css"
     },
     {
-      "Identity": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\styleLogin.css",
+      "Identity": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\styleLogin.css",
       "SourceId": "PrimeiroProjeto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\",
       "BasePath": "_content/PrimeiroProjeto",
-      "RelativePath": "styleLogin.css",
+      "RelativePath": "styleLogin#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "hexf5so6r7",
+      "Integrity": "2WvLV8tA348wMINDGS8rI8Nq7mBZZXoa5FfER89G+G0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\styleLogin.css"
     },
     {
-      "Identity": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\telaInicial.html",
+      "Identity": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telainicial.css",
       "SourceId": "PrimeiroProjeto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\",
       "BasePath": "_content/PrimeiroProjeto",
-      "RelativePath": "telaInicial.html",
+      "RelativePath": "telainicial#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeBehavior": "",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
+      "Fingerprint": "qtbug6aoim",
+      "Integrity": "Xh9meeock3YeWj1mjyleWmNbFkQHZyQYXJMm6NaAzNg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\telainicial.css"
+    },
+    {
+      "Identity": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telaInicial.html",
+      "SourceId": "PrimeiroProjeto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\",
+      "BasePath": "_content/PrimeiroProjeto",
+      "RelativePath": "telaInicial#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zmeip1lb5q",
+      "Integrity": "m4de6OUUUc9z+LxAnBlsSaq829iC8+G7k10HWU9Dnnw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\telaInicial.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "cadastroProduto.html",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\cadastroProduto.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1064"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dZZAtzLUkXkJS/RwGuQEWsueL3yom/pcDlcV49B6HQo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 02:55:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dZZAtzLUkXkJS/RwGuQEWsueL3yom/pcDlcV49B6HQo="
+        }
+      ]
+    },
+    {
+      "Route": "cadastroProduto.pzvauinsvg.html",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\cadastroProduto.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1064"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dZZAtzLUkXkJS/RwGuQEWsueL3yom/pcDlcV49B6HQo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 02:55:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pzvauinsvg"
+        },
+        {
+          "Name": "label",
+          "Value": "cadastroProduto.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dZZAtzLUkXkJS/RwGuQEWsueL3yom/pcDlcV49B6HQo="
+        }
+      ]
+    },
+    {
+      "Route": "cadastroUsers.html",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\cadastroUsers.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "330"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hYdnpMb7APdeMuvAlo/XnyVkfaVHjmBulqdmRvt0vsQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Dec 2024 00:02:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hYdnpMb7APdeMuvAlo/XnyVkfaVHjmBulqdmRvt0vsQ="
+        }
+      ]
+    },
+    {
+      "Route": "cadastroUsers.turyqzwcvp.html",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\cadastroUsers.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "330"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hYdnpMb7APdeMuvAlo/XnyVkfaVHjmBulqdmRvt0vsQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Dec 2024 00:02:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "turyqzwcvp"
+        },
+        {
+          "Name": "label",
+          "Value": "cadastroUsers.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hYdnpMb7APdeMuvAlo/XnyVkfaVHjmBulqdmRvt0vsQ="
+        }
+      ]
+    },
+    {
+      "Route": "index.dprsbe1gem.html",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "793"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5HTV3MSH36oJD4wmWVcN8EQIJ0k13bLyhw+u4HMxbs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 02:55:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dprsbe1gem"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5HTV3MSH36oJD4wmWVcN8EQIJ0k13bLyhw+u4HMxbs="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "793"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v5HTV3MSH36oJD4wmWVcN8EQIJ0k13bLyhw+u4HMxbs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 02:55:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v5HTV3MSH36oJD4wmWVcN8EQIJ0k13bLyhw+u4HMxbs="
+        }
+      ]
+    },
+    {
+      "Route": "scriptLogin.875gn9qn9j.js",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptLogin.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "882"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rOayRM4+VITBcdsXJIJBD1Xr4HZElseRdO/QLPvFkZQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Dec 2024 01:11:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "875gn9qn9j"
+        },
+        {
+          "Name": "label",
+          "Value": "scriptLogin.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rOayRM4+VITBcdsXJIJBD1Xr4HZElseRdO/QLPvFkZQ="
+        }
+      ]
+    },
+    {
+      "Route": "scriptLogin.js",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptLogin.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "882"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rOayRM4+VITBcdsXJIJBD1Xr4HZElseRdO/QLPvFkZQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Dec 2024 01:11:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rOayRM4+VITBcdsXJIJBD1Xr4HZElseRdO/QLPvFkZQ="
+        }
+      ]
+    },
+    {
+      "Route": "scriptPaginas.js",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptPaginas.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "185"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KzU6y8n5PsHVgSAoc87pJTSTsGxfd036LobbfqlCKJY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 18 Dec 2024 23:37:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KzU6y8n5PsHVgSAoc87pJTSTsGxfd036LobbfqlCKJY="
+        }
+      ]
+    },
+    {
+      "Route": "scriptPaginas.p3xhdzztn5.js",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptPaginas.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "185"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KzU6y8n5PsHVgSAoc87pJTSTsGxfd036LobbfqlCKJY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 18 Dec 2024 23:37:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p3xhdzztn5"
+        },
+        {
+          "Name": "label",
+          "Value": "scriptPaginas.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KzU6y8n5PsHVgSAoc87pJTSTsGxfd036LobbfqlCKJY="
+        }
+      ]
+    },
+    {
+      "Route": "scriptProduto.9g8pfjblhg.js",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptProduto.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "679"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"933BHWfaxTyMIqMFnoIhjYfU/s1lZO96tzGV/PzbQHY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 02:55:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9g8pfjblhg"
+        },
+        {
+          "Name": "label",
+          "Value": "scriptProduto.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-933BHWfaxTyMIqMFnoIhjYfU/s1lZO96tzGV/PzbQHY="
+        }
+      ]
+    },
+    {
+      "Route": "scriptProduto.js",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptProduto.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "679"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"933BHWfaxTyMIqMFnoIhjYfU/s1lZO96tzGV/PzbQHY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 02:55:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-933BHWfaxTyMIqMFnoIhjYfU/s1lZO96tzGV/PzbQHY="
+        }
+      ]
+    },
+    {
+      "Route": "scriptUsers.6kr718ozfv.js",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptUsers.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "556"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Rog7IkwC4xd+1Bva5MCiy8NmGsWqAvtMGcOag1qj6TM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 18 Dec 2024 23:15:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6kr718ozfv"
+        },
+        {
+          "Name": "label",
+          "Value": "scriptUsers.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rog7IkwC4xd+1Bva5MCiy8NmGsWqAvtMGcOag1qj6TM="
+        }
+      ]
+    },
+    {
+      "Route": "scriptUsers.js",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptUsers.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "556"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Rog7IkwC4xd+1Bva5MCiy8NmGsWqAvtMGcOag1qj6TM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 18 Dec 2024 23:15:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rog7IkwC4xd+1Bva5MCiy8NmGsWqAvtMGcOag1qj6TM="
+        }
+      ]
+    },
+    {
+      "Route": "style.css",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "174"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8Gy5OCYHAAPhe9X+zkZZ7xbPoc4+pCwHtmoDZG0fIJM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 02:55:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8Gy5OCYHAAPhe9X+zkZZ7xbPoc4+pCwHtmoDZG0fIJM="
+        }
+      ]
+    },
+    {
+      "Route": "style.oeo2zyq9ay.css",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "174"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8Gy5OCYHAAPhe9X+zkZZ7xbPoc4+pCwHtmoDZG0fIJM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 02:55:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oeo2zyq9ay"
+        },
+        {
+          "Name": "label",
+          "Value": "style.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8Gy5OCYHAAPhe9X+zkZZ7xbPoc4+pCwHtmoDZG0fIJM="
+        }
+      ]
+    },
+    {
+      "Route": "styleLogin.css",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\styleLogin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "681"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2WvLV8tA348wMINDGS8rI8Nq7mBZZXoa5FfER89G+G0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 02:55:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2WvLV8tA348wMINDGS8rI8Nq7mBZZXoa5FfER89G+G0="
+        }
+      ]
+    },
+    {
+      "Route": "styleLogin.hexf5so6r7.css",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\styleLogin.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "681"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2WvLV8tA348wMINDGS8rI8Nq7mBZZXoa5FfER89G+G0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 02:55:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hexf5so6r7"
+        },
+        {
+          "Name": "label",
+          "Value": "styleLogin.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2WvLV8tA348wMINDGS8rI8Nq7mBZZXoa5FfER89G+G0="
+        }
+      ]
+    },
+    {
+      "Route": "telainicial.css",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telainicial.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4212"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xh9meeock3YeWj1mjyleWmNbFkQHZyQYXJMm6NaAzNg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 05:10:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xh9meeock3YeWj1mjyleWmNbFkQHZyQYXJMm6NaAzNg="
+        }
+      ]
+    },
+    {
+      "Route": "telaInicial.html",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telaInicial.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"m4de6OUUUc9z+LxAnBlsSaq829iC8+G7k10HWU9Dnnw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 18 Dec 2024 23:38:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-m4de6OUUUc9z+LxAnBlsSaq829iC8+G7k10HWU9Dnnw="
+        }
+      ]
+    },
+    {
+      "Route": "telainicial.qtbug6aoim.css",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telainicial.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4212"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xh9meeock3YeWj1mjyleWmNbFkQHZyQYXJMm6NaAzNg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 05:10:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qtbug6aoim"
+        },
+        {
+          "Name": "label",
+          "Value": "telainicial.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xh9meeock3YeWj1mjyleWmNbFkQHZyQYXJMm6NaAzNg="
+        }
+      ]
+    },
+    {
+      "Route": "telaInicial.zmeip1lb5q.html",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telaInicial.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3869"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"m4de6OUUUc9z+LxAnBlsSaq829iC8+G7k10HWU9Dnnw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 18 Dec 2024 23:38:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zmeip1lb5q"
+        },
+        {
+          "Name": "label",
+          "Value": "telaInicial.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-m4de6OUUUc9z+LxAnBlsSaq829iC8+G7k10HWU9Dnnw="
+        }
+      ]
     }
   ]
 }

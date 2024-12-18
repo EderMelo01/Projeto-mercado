@@ -1,32 +1,52 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\cadastroProduto.html",
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\cadastroProduto.html",
       "PackagePath": "staticwebassets\\cadastroProduto.html"
     },
     {
-      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\index.html",
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\cadastroUsers.html",
+      "PackagePath": "staticwebassets\\cadastroUsers.html"
+    },
+    {
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\scriptLogin.js",
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptLogin.js",
       "PackagePath": "staticwebassets\\scriptLogin.js"
     },
     {
-      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\scriptProduto.js",
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptPaginas.js",
+      "PackagePath": "staticwebassets\\scriptPaginas.js"
+    },
+    {
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptProduto.js",
       "PackagePath": "staticwebassets\\scriptProduto.js"
     },
     {
-      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\style.css",
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptUsers.js",
+      "PackagePath": "staticwebassets\\scriptUsers.js"
+    },
+    {
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\style.css",
       "PackagePath": "staticwebassets\\style.css"
     },
     {
-      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\styleLogin.css",
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\styleLogin.css",
       "PackagePath": "staticwebassets\\styleLogin.css"
     },
     {
-      "Id": "C:\\Users\\cleit\\Projeto-mercado\\wwwroot\\telaInicial.html",
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telaInicial.html",
       "PackagePath": "staticwebassets\\telaInicial.html"
+    },
+    {
+      "Id": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telainicial.css",
+      "PackagePath": "staticwebassets\\telainicial.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PrimeiroProjeto.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PrimeiroProjeto.Microsoft.AspNetCore.StaticWebAssets.props",
