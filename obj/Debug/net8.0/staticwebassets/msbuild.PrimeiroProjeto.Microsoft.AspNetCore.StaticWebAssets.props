@@ -48,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>dprsbe1gem</Fingerprint>
-      <Integrity>v5HTV3MSH36oJD4wmWVcN8EQIJ0k13bLyhw+u4HMxbs=</Integrity>
+      <Fingerprint>6l12627xuo</Fingerprint>
+      <Integrity>ds2x9itJZPeO8uxoTjedbQVMxUO8YgQikBcy/nMeFPE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
@@ -84,8 +84,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>p3xhdzztn5</Fingerprint>
-      <Integrity>KzU6y8n5PsHVgSAoc87pJTSTsGxfd036LobbfqlCKJY=</Integrity>
+      <Fingerprint>8hrg1ibgf1</Fingerprint>
+      <Integrity>5Df+F3f7LHK6PKXwiGwKRdPASgmVAklKImAZPDUnDC8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\scriptPaginas.js'))</OriginalItemSpec>
@@ -120,8 +120,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>6kr718ozfv</Fingerprint>
-      <Integrity>Rog7IkwC4xd+1Bva5MCiy8NmGsWqAvtMGcOag1qj6TM=</Integrity>
+      <Fingerprint>t6pxj3035l</Fingerprint>
+      <Integrity>O2MNsP27Sdmhx200dkXmcc4SwC5P79V+33Rep2mD6Fg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\scriptUsers.js'))</OriginalItemSpec>
@@ -174,8 +174,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>qtbug6aoim</Fingerprint>
-      <Integrity>Xh9meeock3YeWj1mjyleWmNbFkQHZyQYXJMm6NaAzNg=</Integrity>
+      <Fingerprint>56sk1on5ij</Fingerprint>
+      <Integrity>nXyHamEIsztSeFNFEPdVa3D0pgW4Avd9ICpcMz0JwHE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\telainicial.css'))</OriginalItemSpec>
@@ -192,8 +192,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>zmeip1lb5q</Fingerprint>
-      <Integrity>m4de6OUUUc9z+LxAnBlsSaq829iC8+G7k10HWU9Dnnw=</Integrity>
+      <Fingerprint>469q6n60tr</Fingerprint>
+      <Integrity>FG17qvagqsSxMVHH/ShvHwuCYt/myBGrLc31+jYyL9E=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\telaInicial.html'))</OriginalItemSpec>

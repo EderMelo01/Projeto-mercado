@@ -10,7 +10,6 @@ async function users(){
             throw new Error(`HTTP error! status: ${users.status}`);
         }
         let info= await users.json();
-        //info= JSON.parse(info)
         console.log(info[0]["nome"]);
 
     }

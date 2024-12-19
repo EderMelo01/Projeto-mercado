@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo</title>
-    <link rel="stylesheet" href="painel_admin_styles.css">
     <link rel="stylesheet" href="telainicial.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="header-fixo">
         <h1>Painel Administrativo</h1>
-        <a href="cadastroUsers.html"><button class="users"></button></a>
+        <a href="#"><button class="users"></button></a>
     </header>
     <div class="menu-lateral">
         <ul>
-            <li><a href="#" onclick="troca('/usuarios')"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#"><i class="fas fa-cash-register"></i> Venda</a></li>
-            <li><a href="#"><i class="fas fa-receipt"></i> Cupom Fiscal</a></li>
-            <li><a href="#"><i class="fas fa-box"></i> Produtos</a></li>
+            <li><a href="#" onclick="troca('/home')"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#" onclick="troca('/venda')"><i class="fas fa-cash-register"></i> Venda</a></li>
+            <li><a href="#" onclick="troca('/fisca')"><i class="fas fa-receipt"></i> Cupom Fiscal</a></li>
+            <li><a href="#" onclick="troca('/produto')"><i class="fas fa-box"></i> Produtos</a></li>
             <li><a href="#"><i class="fas fa-user"></i> Cliente</a></li>
             <li><a href="#"><i class="fas fa-truck"></i> Fornecedor</a></li>
             <li><a href=""><i class="fa fa-usd"></i>Financeiro</a></li>
@@ -26,7 +25,7 @@
             <li><a href=""><i class="fa fa-cog"></i>Configurações</a></li>
         </ul>
     </div>
-    <div class="conteudo">
+    <div class="conteudo" id="conteiner">
         <div class="cartoes-resumo">
             <div class="cartao verde">
                 <h3>Vendas no ano</h3>
@@ -91,5 +90,6 @@
             </div>
         </div>
     </div>
+    <script src="scriptPaginas.js"></script>
 </body>
 </html>

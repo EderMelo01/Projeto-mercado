@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OjYBSlE6dOQ0TtpFwYijzhsC1+WCBYWJWiRzGYQBXM4=",
+  "Hash": "9ZJQcCZpAGr6zWaGaLowWC6NxIWbRFFYpwnKqf1lnYc=",
   "Source": "PrimeiroProjeto",
   "BasePath": "_content/PrimeiroProjeto",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "dprsbe1gem",
-      "Integrity": "v5HTV3MSH36oJD4wmWVcN8EQIJ0k13bLyhw+u4HMxbs=",
+      "Fingerprint": "6l12627xuo",
+      "Integrity": "ds2x9itJZPeO8uxoTjedbQVMxUO8YgQikBcy/nMeFPE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
@@ -115,8 +115,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "p3xhdzztn5",
-      "Integrity": "KzU6y8n5PsHVgSAoc87pJTSTsGxfd036LobbfqlCKJY=",
+      "Fingerprint": "8hrg1ibgf1",
+      "Integrity": "5Df+F3f7LHK6PKXwiGwKRdPASgmVAklKImAZPDUnDC8=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scriptPaginas.js"
@@ -157,8 +157,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "6kr718ozfv",
-      "Integrity": "Rog7IkwC4xd+1Bva5MCiy8NmGsWqAvtMGcOag1qj6TM=",
+      "Fingerprint": "t6pxj3035l",
+      "Integrity": "O2MNsP27Sdmhx200dkXmcc4SwC5P79V+33Rep2mD6Fg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scriptUsers.js"
@@ -220,8 +220,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "qtbug6aoim",
-      "Integrity": "Xh9meeock3YeWj1mjyleWmNbFkQHZyQYXJMm6NaAzNg=",
+      "Fingerprint": "56sk1on5ij",
+      "Integrity": "nXyHamEIsztSeFNFEPdVa3D0pgW4Avd9ICpcMz0JwHE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\telainicial.css"
@@ -241,8 +241,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "zmeip1lb5q",
-      "Integrity": "m4de6OUUUc9z+LxAnBlsSaq829iC8+G7k10HWU9Dnnw=",
+      "Fingerprint": "469q6n60tr",
+      "Integrity": "FG17qvagqsSxMVHH/ShvHwuCYt/myBGrLc31+jYyL9E=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\telaInicial.html"
@@ -414,7 +414,7 @@
       ]
     },
     {
-      "Route": "index.dprsbe1gem.html",
+      "Route": "index.6l12627xuo.html",
       "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -432,11 +432,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"v5HTV3MSH36oJD4wmWVcN8EQIJ0k13bLyhw+u4HMxbs=\""
+          "Value": "\"ds2x9itJZPeO8uxoTjedbQVMxUO8YgQikBcy/nMeFPE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 02:55:37 GMT"
+          "Value": "Thu, 19 Dec 2024 00:13:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -446,7 +446,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "dprsbe1gem"
+          "Value": "6l12627xuo"
         },
         {
           "Name": "label",
@@ -454,7 +454,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-v5HTV3MSH36oJD4wmWVcN8EQIJ0k13bLyhw+u4HMxbs="
+          "Value": "sha256-ds2x9itJZPeO8uxoTjedbQVMxUO8YgQikBcy/nMeFPE="
         }
       ]
     },
@@ -477,11 +477,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"v5HTV3MSH36oJD4wmWVcN8EQIJ0k13bLyhw+u4HMxbs=\""
+          "Value": "\"ds2x9itJZPeO8uxoTjedbQVMxUO8YgQikBcy/nMeFPE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 02:55:37 GMT"
+          "Value": "Thu, 19 Dec 2024 00:13:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -491,7 +491,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-v5HTV3MSH36oJD4wmWVcN8EQIJ0k13bLyhw+u4HMxbs="
+          "Value": "sha256-ds2x9itJZPeO8uxoTjedbQVMxUO8YgQikBcy/nMeFPE="
         }
       ]
     },
@@ -578,6 +578,51 @@
       ]
     },
     {
+      "Route": "scriptPaginas.8hrg1ibgf1.js",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptPaginas.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "229"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5Df+F3f7LHK6PKXwiGwKRdPASgmVAklKImAZPDUnDC8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Dec 2024 00:42:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8hrg1ibgf1"
+        },
+        {
+          "Name": "label",
+          "Value": "scriptPaginas.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5Df+F3f7LHK6PKXwiGwKRdPASgmVAklKImAZPDUnDC8="
+        }
+      ]
+    },
+    {
       "Route": "scriptPaginas.js",
       "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptPaginas.js",
       "Selectors": [],
@@ -588,7 +633,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "185"
+          "Value": "229"
         },
         {
           "Name": "Content-Type",
@@ -596,11 +641,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"KzU6y8n5PsHVgSAoc87pJTSTsGxfd036LobbfqlCKJY=\""
+          "Value": "\"5Df+F3f7LHK6PKXwiGwKRdPASgmVAklKImAZPDUnDC8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 18 Dec 2024 23:37:28 GMT"
+          "Value": "Thu, 19 Dec 2024 00:42:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -610,52 +655,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-KzU6y8n5PsHVgSAoc87pJTSTsGxfd036LobbfqlCKJY="
-        }
-      ]
-    },
-    {
-      "Route": "scriptPaginas.p3xhdzztn5.js",
-      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptPaginas.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "185"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"KzU6y8n5PsHVgSAoc87pJTSTsGxfd036LobbfqlCKJY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 18 Dec 2024 23:37:28 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "p3xhdzztn5"
-        },
-        {
-          "Name": "label",
-          "Value": "scriptPaginas.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-KzU6y8n5PsHVgSAoc87pJTSTsGxfd036LobbfqlCKJY="
+          "Value": "sha256-5Df+F3f7LHK6PKXwiGwKRdPASgmVAklKImAZPDUnDC8="
         }
       ]
     },
@@ -742,51 +742,6 @@
       ]
     },
     {
-      "Route": "scriptUsers.6kr718ozfv.js",
-      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptUsers.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "556"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Rog7IkwC4xd+1Bva5MCiy8NmGsWqAvtMGcOag1qj6TM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 18 Dec 2024 23:15:03 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "6kr718ozfv"
-        },
-        {
-          "Name": "label",
-          "Value": "scriptUsers.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Rog7IkwC4xd+1Bva5MCiy8NmGsWqAvtMGcOag1qj6TM="
-        }
-      ]
-    },
-    {
       "Route": "scriptUsers.js",
       "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptUsers.js",
       "Selectors": [],
@@ -797,7 +752,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "556"
+          "Value": "522"
         },
         {
           "Name": "Content-Type",
@@ -805,11 +760,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Rog7IkwC4xd+1Bva5MCiy8NmGsWqAvtMGcOag1qj6TM=\""
+          "Value": "\"O2MNsP27Sdmhx200dkXmcc4SwC5P79V+33Rep2mD6Fg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 18 Dec 2024 23:15:03 GMT"
+          "Value": "Thu, 19 Dec 2024 00:03:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -819,7 +774,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Rog7IkwC4xd+1Bva5MCiy8NmGsWqAvtMGcOag1qj6TM="
+          "Value": "sha256-O2MNsP27Sdmhx200dkXmcc4SwC5P79V+33Rep2mD6Fg="
+        }
+      ]
+    },
+    {
+      "Route": "scriptUsers.t6pxj3035l.js",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\scriptUsers.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "522"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"O2MNsP27Sdmhx200dkXmcc4SwC5P79V+33Rep2mD6Fg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Dec 2024 00:03:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t6pxj3035l"
+        },
+        {
+          "Name": "label",
+          "Value": "scriptUsers.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-O2MNsP27Sdmhx200dkXmcc4SwC5P79V+33Rep2mD6Fg="
         }
       ]
     },
@@ -988,6 +988,96 @@
       ]
     },
     {
+      "Route": "telaInicial.469q6n60tr.html",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telaInicial.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3906"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"FG17qvagqsSxMVHH/ShvHwuCYt/myBGrLc31+jYyL9E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Dec 2024 00:41:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "469q6n60tr"
+        },
+        {
+          "Name": "label",
+          "Value": "telaInicial.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-FG17qvagqsSxMVHH/ShvHwuCYt/myBGrLc31+jYyL9E="
+        }
+      ]
+    },
+    {
+      "Route": "telainicial.56sk1on5ij.css",
+      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telainicial.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4196"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nXyHamEIsztSeFNFEPdVa3D0pgW4Avd9ICpcMz0JwHE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Dec 2024 00:37:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "56sk1on5ij"
+        },
+        {
+          "Name": "label",
+          "Value": "telainicial.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nXyHamEIsztSeFNFEPdVa3D0pgW4Avd9ICpcMz0JwHE="
+        }
+      ]
+    },
+    {
       "Route": "telainicial.css",
       "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telainicial.css",
       "Selectors": [],
@@ -998,7 +1088,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4212"
+          "Value": "4196"
         },
         {
           "Name": "Content-Type",
@@ -1006,11 +1096,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Xh9meeock3YeWj1mjyleWmNbFkQHZyQYXJMm6NaAzNg=\""
+          "Value": "\"nXyHamEIsztSeFNFEPdVa3D0pgW4Avd9ICpcMz0JwHE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 05:10:52 GMT"
+          "Value": "Thu, 19 Dec 2024 00:37:02 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1020,7 +1110,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Xh9meeock3YeWj1mjyleWmNbFkQHZyQYXJMm6NaAzNg="
+          "Value": "sha256-nXyHamEIsztSeFNFEPdVa3D0pgW4Avd9ICpcMz0JwHE="
         }
       ]
     },
@@ -1035,7 +1125,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3869"
+          "Value": "3906"
         },
         {
           "Name": "Content-Type",
@@ -1043,11 +1133,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"m4de6OUUUc9z+LxAnBlsSaq829iC8+G7k10HWU9Dnnw=\""
+          "Value": "\"FG17qvagqsSxMVHH/ShvHwuCYt/myBGrLc31+jYyL9E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 18 Dec 2024 23:38:04 GMT"
+          "Value": "Thu, 19 Dec 2024 00:41:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1057,97 +1147,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-m4de6OUUUc9z+LxAnBlsSaq829iC8+G7k10HWU9Dnnw="
-        }
-      ]
-    },
-    {
-      "Route": "telainicial.qtbug6aoim.css",
-      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telainicial.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4212"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Xh9meeock3YeWj1mjyleWmNbFkQHZyQYXJMm6NaAzNg=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 05:10:52 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "qtbug6aoim"
-        },
-        {
-          "Name": "label",
-          "Value": "telainicial.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Xh9meeock3YeWj1mjyleWmNbFkQHZyQYXJMm6NaAzNg="
-        }
-      ]
-    },
-    {
-      "Route": "telaInicial.zmeip1lb5q.html",
-      "AssetFile": "C:\\Users\\ederm\\OneDrive\\Documentos\\C#\\projeto-mercado\\Projeto-mercado\\wwwroot\\telaInicial.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3869"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"m4de6OUUUc9z+LxAnBlsSaq829iC8+G7k10HWU9Dnnw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 18 Dec 2024 23:38:04 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "zmeip1lb5q"
-        },
-        {
-          "Name": "label",
-          "Value": "telaInicial.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-m4de6OUUUc9z+LxAnBlsSaq829iC8+G7k10HWU9Dnnw="
+          "Value": "sha256-FG17qvagqsSxMVHH/ShvHwuCYt/myBGrLc31+jYyL9E="
         }
       ]
     }

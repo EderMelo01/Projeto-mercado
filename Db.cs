@@ -23,13 +23,16 @@ namespace PrimeiroProjeto
                 conexao.Close();
                 return null;
             }
+            while (result.Read())
+            {
 
-            user.id = result.GetInt32("id");
-            user.nome = result.GetString("nome");
-            user.senha = result.GetString("senha");
-            user.logado = result.GetInt32("logado") == 0 ? false : true;
-            user.bloqueado = result.GetInt32("bloqueado") == 0 ? false : true;
-            user.data_nascimento = result.GetDateTime("data_nascimento").ToString();
+                user.id = result.GetInt32("id");
+                user.nome = result.GetString("nome");
+                user.senha = result.GetString("senha");
+                user.logado = result.GetInt32("logado") == 0 ? false : true;
+                user.bloqueado = result.GetInt32("bloqueado") == 0 ? false : true;
+                user.data_nascimento = result.GetDateTime("data_nascimento").ToString();
+            }
             conexao.Close();
             return user;
         }
