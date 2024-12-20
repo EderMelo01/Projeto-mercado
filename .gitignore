@@ -1,0 +1,12 @@
+# Ignorar diretórios gerados
+bin/
+obj/
+
+# Ignorar arquivos gerados automaticamente
+*.cache
+*.log
+*.editorconfig
+
+# Ignorar configurações locais
+.vs/
+*.user
