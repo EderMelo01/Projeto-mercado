@@ -6,6 +6,8 @@ using PrimeiroProjeto;
 using Controller = PrimeiroProjeto.Controller;
 using System.Collections.Generic;
 using System.Net.Mail;
+using System.Text.Json;
+using Microsoft.AspNetCore.SignalR;
 
 
 
@@ -62,6 +64,15 @@ app.MapPost("/app/login", async (context) =>
     }
 
 });
+
+app.MapGet("app/users",  async (context)=>{
+    List<Dictionary<string, dynamic>> json=[];
+    List<User> users= control.GetUsers();
+        for(int i=0; i<users.Count; i++){
+            json.Add(User.userForMap(users[i]));
+        }
+    await context.Response.WriteAsJsonAsync(json);
+    });
 
 
 app.Run();
