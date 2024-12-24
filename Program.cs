@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Net.Mail;
 using System.Text.Json;
 using Microsoft.AspNetCore.SignalR;
+using System.Reflection.PortableExecutable;
 
 
 
@@ -18,7 +19,8 @@ var app = builder.Build();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-Db control = new Db();
+Db control = new();
+
 
 app.MapGet("/app/version", () => "0.0.1");
 
@@ -74,5 +76,6 @@ app.MapGet("app/users",  async (context)=>{
     await context.Response.WriteAsJsonAsync(json);
     });
 
+control.InsertProduto("produtos.xlsx");
 
 app.Run();

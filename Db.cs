@@ -62,5 +62,16 @@ namespace PrimeiroProjeto
             conexao.Close();
             return users;
         }
+        public void InsertProduto(string caminho)
+        {
+            MySqlConnection conexao = BancoDados.Banco.Conexao();
+            List<Dictionary<string, dynamic>> result = Produto.importacao(caminho);
+            for (int i = 0; i < result.Count; i++)
+            {
+                MySqlCommand selectCommand = new MySqlCommand($"INSERT INTO PRODUTOS(nome, preco, perecivel) VALUES ('{result[i]["nome"]}', {result[i]["preco"]}, {result[i]["perecivel"]});", conexao);
+                selectCommand.ExecuteReader();
+            }
+            conexao.Close();
+        }
     }
 }

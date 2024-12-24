@@ -1,0 +1,113 @@
+.conteudo {
+    display: flex;
+    flex-direction: row; 
+    padding: 0px;
+    text-align: center;
+    margin-top: 55px;
+    margin-left: 80px; /* Ajusta o conteúdo para não invadir o menu */
+    width: calc(100% - 220px);
+}
+
+.conteudo div {
+    padding: 2px;
+    text-align: center;
+}
+
+.expandidor {
+    border: solid #494949;
+    width: 20px;
+    height: 15px;
+}
+
+.nome-codigo {
+    border: solid #494949;
+    width: 450px;
+    height: 15px;
+}
+
+.valor {
+    border: solid #494949;
+    width: 100px;
+    height: 15px;
+}
+
+.divididor {
+    border: solid #494949;
+    width: 10px;
+    height: 15px;
+}
+
+nav {
+    background-color: #494949; 
+    color: white;
+    padding-top: 5px;
+    width: 300px;
+    border-top: solid black;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+
+}
+
+nav ul ul {
+    margin: 0;
+}
+.itens li {
+    font-weight: normal;
+    border: solid black;
+    margin-top: 3px;
+    border-bottom: transparent;
+    padding: 3px;
+    height: 15px;
+    margin-right: 10px;
+}
+.itens li:hover{
+    background-color:  #a5a0a0;
+    cursor: pointer;
+}
+.itens li:active{
+    background-color:  #808080;
+    cursor: pointer;
+    padding: 6px
+}
+/*.segundo-header{
+    position: fixed;
+    background-color: #494949;
+    margin: 0px;
+    color: white;
+    display: block;
+    padding: 10px;
+    width: 100%;
+}
+.segundo-lateral{
+    background-color: #494949;
+    color: white;
+    display: block;
+    height: 100%;
+    flex-direction: column;
+    position: fixed;
+    padding: 20px;
+
+}*/
+.caixa{
+    display: flex;
+    align-items: center;
+}
+
+.produtosCadastrados{
+    display: auto;
+}
+.produtosCadastrados div{
+    
+    border-color: #333;
+}
+.navegacao{
+    display: flex;
+    padding: 2rem;
+    background-color: rgb(191, 197, 212);
+
+}
