@@ -8,33 +8,41 @@
     width: calc(100% - 220px);
 }
 
-.conteudo div {
-    padding: 2px;
+.conteudo div { 
     text-align: center;
+}
+
+.coluna{
+    flex-direction: column;
+    margin-right: 2px;
+}
+
+aside{
+    display: flex;
+}
+
+aside div{
+    display: auto;
 }
 
 .expandidor {
     border: solid #494949;
     width: 20px;
-    height: 15px;
 }
 
 .nome-codigo {
     border: solid #494949;
     width: 450px;
-    height: 15px;
 }
 
 .valor {
     border: solid #494949;
     width: 100px;
-    height: 15px;
 }
 
 .divididor {
     border: solid #494949;
     width: 10px;
-    height: 15px;
 }
 
 nav {

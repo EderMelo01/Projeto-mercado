@@ -46,8 +46,8 @@ app.MapPost("/app/login", async (context) =>
         }
         else
         {
-            var senhaValida= BCrypt.Net.BCrypt.Verify(pessoa.senha, users.senha);
-            if (senhaValida&& !users.logado)
+            var senhaValida = BCrypt.Net.BCrypt.Verify(pessoa.senha, users.senha);
+            if (senhaValida && !users.logado)
             {
 
                 control.Upgrade($"UPDATE USER SET logado= 1 WHERE nome = '{users.nome}'");
@@ -67,15 +67,21 @@ app.MapPost("/app/login", async (context) =>
 
 });
 
-app.MapGet("app/users",  async (context)=>{
-    List<Dictionary<string, dynamic>> json=[];
-    List<User> users= control.GetUsers();
-        for(int i=0; i<users.Count; i++){
-            json.Add(User.userForMap(users[i]));
-        }
+app.MapGet("app/users", async (context) =>
+{
+    List<Dictionary<string, dynamic>> json = [];
+    List<User> users = control.GetUsers();
+    for (int i = 0; i < users.Count; i++)
+    {
+        json.Add(User.userForMap(users[i]));
+    }
     await context.Response.WriteAsJsonAsync(json);
-    });
+});
 
-control.InsertProduto("produtos.xlsx");
+app.MapGet("app/produtos", async (context) =>
+{
+    List<Dictionary<string, dynamic>> produtos = control.GetProdutos();
+    await context.Response.WriteAsJsonAsync(produtos);
+});
 
 app.Run();

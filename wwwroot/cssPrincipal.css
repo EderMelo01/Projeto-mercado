@@ -29,6 +29,36 @@ body {
     text-align: center;
     font-size: 18px;
 }
+.menuUsers{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 55px;
+    position: absolute;
+    border: solid gray;
+    margin-left: 90%;
+    width: 80px;
+    background-color: white;
+    display: none;
+
+}
+.menuUsers ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menuUsers li{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.menuUsers li:hover{
+    background-color: rgb(220, 217, 217) 1px solid;
+    cursor: pointer;
+}
+
 .users{
     background-color: transparent;
     border: none;

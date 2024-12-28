@@ -5,11 +5,11 @@ using ExcelDataReader;
 
 public class Produto
 {
-    private int id;
-    private string nome;
-    private double preco;
-    private string imagem;
-    private bool perecivel;
+    public int id;
+    public string nome;
+    public double preco;
+    public string imagem;
+    public bool perecivel;
     public Produto()
     {
 
@@ -39,9 +39,8 @@ public class Produto
                         if(row[0].ToString() != "Produto" && row[1].ToString() != "Venda UN"){
                             Dictionary<string, dynamic> produto = new Dictionary<string, dynamic>();
                             produto["nome"] = row[0].ToString();
-                            produto["preco"] = Convert.ToString(row[1])== ""? 0.00 :  Convert.ToDouble(row[1]);
-                            produto["imagem"] = "";
-                            produto["perecivel"] = "FALSE";
+                            produto["preco"] = row[1].ToString() == "" || row[1].ToString == null? 0.00 : row[1]; 
+                            produto["perecivel"] = false;
                             produtos.Add(produto);
                         }
                     }

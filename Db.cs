@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 using MySql.EntityFrameworkCore.DataAnnotations;
 using Org.BouncyCastle.Crypto.Digests;
@@ -64,14 +65,32 @@ namespace PrimeiroProjeto
         }
         public void InsertProduto(string caminho)
         {
-            MySqlConnection conexao = BancoDados.Banco.Conexao();
             List<Dictionary<string, dynamic>> result = Produto.importacao(caminho);
             for (int i = 0; i < result.Count; i++)
             {
+                MySqlConnection conexao = BancoDados.Banco.Conexao();
                 MySqlCommand selectCommand = new MySqlCommand($"INSERT INTO PRODUTOS(nome, preco, perecivel) VALUES ('{result[i]["nome"]}', {result[i]["preco"]}, {result[i]["perecivel"]});", conexao);
                 selectCommand.ExecuteReader();
+                conexao.Close();
+            }
+        }
+        public List<Dictionary<string, dynamic>> GetProdutos(){
+            MySqlConnection conexao = BancoDados.Banco.Conexao();
+            MySqlCommand selectCommand = new MySqlCommand($"SELECT * FROM PRODUTOS;", conexao);
+            var result= selectCommand.ExecuteReader();
+            List<Dictionary<string, dynamic>> produtos = new List<Dictionary<string, dynamic>>();
+            while (result.Read())
+            {
+                Dictionary<string, dynamic> produto = new Dictionary<string, dynamic>(){
+                    {"id", result.GetInt32("idProduto")},
+                    {"nome", result.GetString("nome")},
+                    {"preco", result.GetDouble("preco")},
+                    {"perecivel", result.GetBoolean("perecivel")? "Sim": "Não"}
+                };
+                produtos.Add(produto);
             }
             conexao.Close();
+            return produtos;
         }
     }
 }
