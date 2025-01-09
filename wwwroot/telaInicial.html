@@ -13,7 +13,7 @@
 <body>
     <header class="header-fixo">
         <h1>Painel Administrativo</h1>
-        <button class="users"></button>
+        <button id= "userIcon" class="users" onclick="clickUser()"></button>
     </header>
     <div class="menu-lateral">
         <ul>
@@ -28,10 +28,11 @@
             <li><a href=""><i class="fa fa-cog"></i>Configurações</a></li>
         </ul>
     </div>
-    <div class="menuUsers">
+    <div id="menuUsers" class="menuUsers">
         <nav>
             <ul>
                 <li>Users</li>
+                <li>Deslogar</li>
             </ul>
         </nav>
     </div>

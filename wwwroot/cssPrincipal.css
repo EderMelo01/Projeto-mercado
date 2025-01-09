@@ -34,15 +34,16 @@ body {
     align-items: center;
     text-align: center;
     flex-direction: column;
-    margin-top: 55px;
+    margin-top: 53px;
     position: absolute;
     border: solid gray;
-    margin-left: 90%;
-    width: 80px;
+    margin-left: 87%;
+    width: 150px;
     background-color: white;
     display: none;
 
 }
+
 .menuUsers ul{
     list-style: none;
     padding: 0;
@@ -51,11 +52,11 @@ body {
 }
 
 .menuUsers li{
-    margin-top: 2px;
-    margin-bottom: 2px;
+    padding: 3px;
+    border: solid rgb(224, 224, 224);
 }
 .menuUsers li:hover{
-    background-color: rgb(220, 217, 217) 1px solid;
+    
     cursor: pointer;
 }
 

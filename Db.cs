@@ -74,9 +74,10 @@ namespace PrimeiroProjeto
                 conexao.Close();
             }
         }
-        public List<Dictionary<string, dynamic>> GetProdutos(){
+        public List<Dictionary<string, dynamic>> GetProdutos(int num){
+            var status= num==1? "true" : num<1? "false" : "";
             MySqlConnection conexao = BancoDados.Banco.Conexao();
-            MySqlCommand selectCommand = new MySqlCommand($"SELECT * FROM PRODUTOS;", conexao);
+            MySqlCommand selectCommand = new MySqlCommand("SELECT * FROM PRODUTOS"+(status==""? ';': $"WHERE status= {status}; ") , conexao);
             var result= selectCommand.ExecuteReader();
             List<Dictionary<string, dynamic>> produtos = new List<Dictionary<string, dynamic>>();
             while (result.Read())

@@ -78,10 +78,11 @@ app.MapGet("app/users", async (context) =>
     await context.Response.WriteAsJsonAsync(json);
 });
 
-app.MapGet("app/produtos", async (context) =>
+app.MapGet("app/produtos/{status}", async (int status, HttpContext context) =>
 {
-    List<Dictionary<string, dynamic>> produtos = control.GetProdutos();
+    List<Dictionary<string, dynamic>> produtos = control.GetProdutos(status);
     await context.Response.WriteAsJsonAsync(produtos);
+
 });
 
 app.Run();

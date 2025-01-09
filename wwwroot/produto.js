@@ -1,8 +1,29 @@
-async function getProdutos() {
+let produtoListado;
+let produtoSelecionado = 0;
+let cadastroPrduto= `
+    <form method="PUT" name="cadastroProduto">
+        <label for= "pnome">Nome Produto </label>
+        <input type="text" id="pnome" name="pnome" required><br>
+        <p>Perecivel:</p><br>
+        <input type="radio" id="perecivel" value="nao"></input>
+        <label for= "perecivel" value="1">Sim</label>
+        <input type="radio" id="nperecivel" value="nao"></input>
+        <label for= "nperecivel" value="0">Não</label>
+    </form>
+`
+function ifremeProduto(){
+    if (produtoSelecionado==0){
+        let frame= document.createElement("iframe").srcdoc= cadastroPrduto;
+        document.getElementById("conteiner").appendChild(frame);
+    }
+}
+
+async function getProdutos(num) {
+    num = num ?? "";
     let asides = [];
     let coluna = document.getElementById("coluna");
     try {
-        let produtos = await fetch("app/produtos", {
+        let produtos = await fetch(`app/produtos/${num}`, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
@@ -11,30 +32,29 @@ async function getProdutos() {
         if (!produtos.ok) {
             throw new Error("Failed to get produtos");
         }
-
-        produtos = await produtos.json()
-        if (produtos != null) {
-            for (let i = 0; i < produtos.length; i++) {
-                let aside = document.createElement("aside");
-                aside.innerHTML = `<aside class="ProdutoListado" onclick="clickProduto(${produtos[i]["id"]})">
+        produtoListado = await produtos.json()
+        for (var i in produtoListado) {
+            let aside = document.createElement("aside");
+            aside.innerHTML = `<aside class="ProdutoListado" onclick="clickProduto(${i["id"]})">
             <div class="expandidor"></div>
-            <div class="nome-codigo">${produtos[i]["nome"]}</div>
-            <div class="valor">${produtos[i]["preco"]}</div>
+            <div class="nome-codigo">${i["nome"]}</div>
+            <div class="valor">${i["preco"]}</div>
             <div  class="nome-codigo"></div>
             <div class="divididor"></div>
         </aside>`
-                coluna.appendChild(aside);
-            }
-
+            coluna.appendChild(aside);
         }
-    } catch (error) {
-        console.error(error);
     }
+    catch (error) {
+    console.error(error);
+}
 
 }
 getProdutos();
 
-function clickProduto(id){
+
+
+function clickProduto(id) {
     console.log(id);
 }
 
