@@ -1,6 +1,6 @@
 let produtoListado;
 let produtoSelecionado = 0;
-let cadastroPrduto= `
+let cadastroProduto= `
     <form method="PUT" name="cadastroProduto">
         <label for= "pnome">Nome Produto </label>
         <input type="text" id="pnome" name="pnome" required><br>
@@ -13,8 +13,10 @@ let cadastroPrduto= `
 `
 function ifremeProduto(){
     if (produtoSelecionado==0){
-        let frame= document.createElement("iframe").srcdoc= cadastroPrduto;
-        document.getElementById("conteiner").appendChild(frame);
+        let iframe= document.createElement("iframe");
+        iframe.srcdoc=cadastroProduto;
+        document.getElementById("conteiner").appendChild(iframe);
+        document.getElementsByTagName("html").style.display= "block";
     }
 }
 

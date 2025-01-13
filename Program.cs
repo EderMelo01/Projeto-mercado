@@ -26,6 +26,7 @@ app.MapGet("/app/version", () => "0.0.1");
 
 app.MapPost("/app/login", async (context) =>
 {
+    control.InsertProduto("produtos.xlsx");
     var pessoa = await context.Request.ReadFromJsonAsync<Pessoa>();
     if (pessoa == null)
     {
@@ -84,5 +85,6 @@ app.MapGet("app/produtos/{status}", async (int status, HttpContext context) =>
     await context.Response.WriteAsJsonAsync(produtos);
 
 });
+
 
 app.Run();

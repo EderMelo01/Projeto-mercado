@@ -82,25 +82,7 @@ nav ul ul {
     cursor: pointer;
     padding: 6px
 }
-/*.segundo-header{
-    position: fixed;
-    background-color: #494949;
-    margin: 0px;
-    color: white;
-    display: block;
-    padding: 10px;
-    width: 100%;
-}
-.segundo-lateral{
-    background-color: #494949;
-    color: white;
-    display: block;
-    height: 100%;
-    flex-direction: column;
-    position: fixed;
-    padding: 20px;
 
-}*/
 .caixa{
     display: flex;
     align-items: center;
@@ -118,4 +100,11 @@ nav ul ul {
     padding: 2rem;
     background-color: rgb(191, 197, 212);
 
+}
+
+iframe{
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    text-align: center;
 }
