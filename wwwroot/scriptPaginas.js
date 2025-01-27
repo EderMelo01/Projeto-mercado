@@ -3,6 +3,9 @@ const paginas = {
     "/home": paginaInicial,
     "/produto": `
     <div id="coluna" class="coluna">
+        <div>
+            <input type="text", id="filtroID" placeholder="Digite o Produto"></input>
+        </div>
         <aside>
             <div  class="expandidor"></div>
             <div  class="nome-codigo">Nome</div>
@@ -17,13 +20,13 @@ const paginas = {
             <li class="menu">Produtos
                 <ul class="itens">
                     <li onclick="ifremeProduto()"><i class="fa fa-plus"></i>Novo</li>
-                    <li><i class="fa fa-pencil"></i>Alterar</li>
-                    <li><i class="fa fa-trash"></i>Excluir</li>
+                    <li onclick= "alteraProduto()"><i class="fa fa-pencil"></i>Alterar</li>
+                    <li onclick= "deleteProduto()"> <i class="fa fa-trash"></i>Excluir</li>
                 </ul>
                 <ul class="itens">
-                    <li onclick="getProdutos(1)"><i></i>Todos</li>
-                    <li onclick="getProdutos(true)"><i></i>Ativos</li>
-                    <li onclick="getProdutos(false)"><i></i>inativos</li>
+                    <li class= "BtStatus" onclick="getProdutos()"><i></i>Todos</li>
+                    <li class= "BtStatus" onclick="getProdutos(1)"><i></i>Ativos</li>
+                    <li class= "BtStatus" onclick="getProdutos(0)"><i></i>inativos</li>
                 </ul>
             </li>
         </ul>

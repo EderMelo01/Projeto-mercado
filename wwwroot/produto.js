@@ -1,6 +1,6 @@
 let produtoListado;
 let produtoSelecionado = 0;
-let cadastroProduto= `
+let cadastroProduto = `
     <form method="PUT" name="cadastroProduto">
         <label for= "pnome">Nome Produto </label>
         <input type="text" id="pnome" name="pnome" required><br>
@@ -11,21 +11,22 @@ let cadastroProduto= `
         <label for= "nperecivel" value="0">Não</label>
     </form>
 `
-function ifremeProduto(){
-    if (produtoSelecionado==0){
-        let iframe= document.createElement("iframe");
-        iframe.srcdoc=cadastroProduto;
+let verificador;
+function ifremeProduto() {
+    if (produtoSelecionado == 0) {
+        let iframe = document.createElement("iframe");
+        iframe.srcdoc = cadastroProduto;
         document.getElementById("conteiner").appendChild(iframe);
-        document.getElementsByTagName("html").style.display= "block";
+        document.getElementsByTagName("html").style.display = "none";
     }
 }
 
-async function getProdutos(num) {
-    num = num ?? "";
-    let asides = [];
-    let coluna = document.getElementById("coluna");
+async function getProdutos(verificadorSelecionado = 3, texto = null) {
+    let campoTexto = document.getElementById("filtroID").value.toLowerCase();
+    texto = campoTexto.trim().length > 0 ? campoTexto.trim() : texto;
+    verificador = verificadorSelecionado;
     try {
-        let produtos = await fetch(`app/produtos/${num}`, {
+        let produtos = await fetch(`app/produtos/produtos?status=${verificador}&texto=${texto}`, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
@@ -35,29 +36,23 @@ async function getProdutos(num) {
             throw new Error("Failed to get produtos");
         }
         produtoListado = await produtos.json()
-        for (var i in produtoListado) {
-            let aside = document.createElement("aside");
-            aside.innerHTML = `<aside class="ProdutoListado" onclick="clickProduto(${i["id"]})">
-            <div class="expandidor"></div>
-            <div class="nome-codigo">${i["nome"]}</div>
-            <div class="valor">${i["preco"]}</div>
-            <div  class="nome-codigo"></div>
-            <div class="divididor"></div>
-        </aside>`
-            coluna.appendChild(aside);
-        }
+        geraProdutos(produtoListado);
     }
     catch (error) {
-    console.error(error);
-}
+        console.error(error);
+    }
 
 }
 getProdutos();
 
 
 
-function clickProduto(id) {
-    console.log(id);
+function clickProduto(idProduto) {
+    if (produtoSelecionado != 0) {
+        document.getElementById(produtoSelecionado).style.backgroundColor = "transparent";
+    }
+    produtoSelecionado = idProduto;
+    document.getElementById(produtoSelecionado).style.backgroundColor = "#b5b5b5";
 }
 
 
@@ -65,13 +60,79 @@ function clickProduto(id) {
 
 
 
+async function alteraProduto() {
+    try {
+        let requisicao = await fetch(`app/produtos/${produtoSelecionado}`, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if (!requisicao.ok) {
+            throw new Error("Falhou alterar o produto");
+        }
+    }
+    catch (erro) {
+        console.log(erro);
+    }
+
+}
 
 
 
 
 
+async function geraProdutos(array) {
+    let coluna = document.getElementById("coluna");
+    let filhos = document.getElementsByClassName("ProdutoListado");
+    for (i in filhos) {
+        for (let lf of filhos) {
+            lf.remove();
+        }
+    }
+    array.forEach(function (i) {
+        let aside = document.createElement("aside");
+        aside.innerHTML = `<aside id="${i["id"]}" class="ProdutoListado" onclick="clickProduto(${i["id"]})">
+        <div class="expandidor"></div>
+        <div class="nome-codigo">${i["nome"]}</div>
+        <div class="valor">${i["preco"]}</div>
+        <div  class="nome-codigo"></div>
+        <div class="divididor"></div>
+    </aside>`
+        coluna.appendChild(aside);
+    });
+}
+
+document.getElementById("filtroID").addEventListener("keydown", function () {
+    let texto = this.value;
+    if (texto.length >= 1) {
+        getProdutos(verificador, texto);
+    }
+
+});
 
 
+
+async function deleteProduto() {
+    if (produtoSelecionado != 0) {
+        try {
+            var result = await fetch(`app/produtos/${produtoSelecionado}`, {
+                method: "DELETE",
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if(!result.ok){
+                throw new Error("falha ao tentar excluir");
+            }
+            getProdutos(verificador);
+            produtoSelecionado=0;
+        }
+        catch(erro){
+            console.log(erro);
+        }    
+    }
+}
 
 
 

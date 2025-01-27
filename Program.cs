@@ -3,30 +3,30 @@ using System.Diagnostics;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using PrimeiroProjeto;
-using Controller = PrimeiroProjeto.Controller;
 using System.Collections.Generic;
 using System.Net.Mail;
 using System.Text.Json;
 using Microsoft.AspNetCore.SignalR;
 using System.Reflection.PortableExecutable;
-
-
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers(); ///Define que terá controllers
 var app = builder.Build();
 
+app.MapControllers(); ///Diz para pagar rota de um controlador
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
 Db control = new();
 
-
 app.MapGet("/app/version", () => "0.0.1");
 
-app.MapPost("/app/login", async (context) =>
+/*app.MapPost("/app/login", async (context) =>
 {
-    control.InsertProduto("produtos.xlsx");
     var pessoa = await context.Request.ReadFromJsonAsync<Pessoa>();
     if (pessoa == null)
     {
@@ -66,7 +66,7 @@ app.MapPost("/app/login", async (context) =>
         }
     }
 
-});
+});*/
 
 app.MapGet("app/users", async (context) =>
 {
@@ -78,13 +78,4 @@ app.MapGet("app/users", async (context) =>
     }
     await context.Response.WriteAsJsonAsync(json);
 });
-
-app.MapGet("app/produtos/{status}", async (int status, HttpContext context) =>
-{
-    List<Dictionary<string, dynamic>> produtos = control.GetProdutos(status);
-    await context.Response.WriteAsJsonAsync(produtos);
-
-});
-
-
 app.Run();

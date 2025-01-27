@@ -63,6 +63,7 @@ namespace PrimeiroProjeto
             conexao.Close();
             return users;
         }
+        //////////////////////// Metodos do banco para os produtos
         public void InsertProduto(string caminho)
         {
             List<Dictionary<string, dynamic>> result = Produto.importacao(caminho);
@@ -74,24 +75,34 @@ namespace PrimeiroProjeto
                 conexao.Close();
             }
         }
-        public List<Dictionary<string, dynamic>> GetProdutos(int num){
-            var status= num==1? "true" : num<1? "false" : "";
+        public List<Dictionary<string, dynamic>> GetProdutos(string texto)
+        {
             MySqlConnection conexao = BancoDados.Banco.Conexao();
-            MySqlCommand selectCommand = new MySqlCommand("SELECT * FROM PRODUTOS"+(status==""? ';': $"WHERE status= {status}; ") , conexao);
-            var result= selectCommand.ExecuteReader();
-            List<Dictionary<string, dynamic>> produtos = new List<Dictionary<string, dynamic>>();
+            string query = "SELECT * FROM PRODUTOS " + texto;
+            MySqlCommand selectCommand = new MySqlCommand(query, conexao);
+            var result = selectCommand.ExecuteReader();
+            List<Dictionary<string, dynamic>> produtos = [];
             while (result.Read())
             {
                 Dictionary<string, dynamic> produto = new Dictionary<string, dynamic>(){
-                    {"id", result.GetInt32("idProduto")},
+                    {"id", result.GetInt32("id_produto")},
                     {"nome", result.GetString("nome")},
                     {"preco", result.GetDouble("preco")},
-                    {"perecivel", result.GetBoolean("perecivel")? "Sim": "Não"}
+                    {"perecivel", result.GetBoolean("perecivel")? "Sim": "Não"},
+                    {"status",result.GetBoolean("status")? 1: 0}
                 };
                 produtos.Add(produto);
             }
             conexao.Close();
             return produtos;
+        }
+        public void DeleteById(int id)
+        {
+            MySqlConnection conexao = BancoDados.Banco.Conexao();
+            MySqlCommand selectCommand = new MySqlCommand($"DELETE FROM PRODUTOS WHERE id_produto= {id};", conexao);
+            selectCommand.ExecuteReader();
+            conexao.Close();
+
         }
     }
 }

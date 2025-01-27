@@ -10,7 +10,6 @@ namespace PrimeiroProjeto
     {
         readonly string connectionString = "Server=localhost;Port=3306;Database=mercado;Uid=meu_usuario;Pwd=minha_senha;";
         private readonly MySqlConnection conn;
-        private bool conectado = false;
 
         private static BancoDados? instancia = null;
         private BancoDados()
@@ -34,11 +33,6 @@ namespace PrimeiroProjeto
 
             conn.Open();
             return conn;
-        }
-        public void Desconecta()
-        {
-            conn.Close();
-            conectado = false;
         }
 
     }
