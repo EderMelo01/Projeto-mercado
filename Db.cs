@@ -85,7 +85,7 @@ namespace PrimeiroProjeto
             while (result.Read())
             {
                 Dictionary<string, dynamic> produto = new Dictionary<string, dynamic>(){
-                    {"id", result.GetInt32("id_produto")},
+                    {"id_produto", result.GetInt32("id_produto")},
                     {"nome", result.GetString("nome")},
                     {"preco", result.GetDouble("preco")},
                     {"perecivel", result.GetBoolean("perecivel")? "Sim": "Não"},
@@ -103,6 +103,12 @@ namespace PrimeiroProjeto
             selectCommand.ExecuteReader();
             conexao.Close();
 
+        }
+        public void SetStatusById(int id, int novoStatus){
+            MySqlConnection conexao = BancoDados.Banco.Conexao();
+            MySqlCommand selectCommand = new MySqlCommand($"UPDATE PRODUTOS SET status={novoStatus} WHERE id_produto= {id};", conexao);
+            selectCommand.ExecuteReader();
+            conexao.Close();
         }
     }
 }

@@ -42,5 +42,12 @@ namespace PrimeiroProjeto
         public void DeleteById(int id){
             control.DeleteById(id);
         }
+
+
+        [HttpPut("setStatus")]
+        public void SetStatusById([FromQuery]int id, [FromQuery]int novoStatus){
+            control.SetStatusById(id, novoStatus);
+        }
+
     }
 }

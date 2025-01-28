@@ -37,6 +37,7 @@ async function getProdutos(verificadorSelecionado = 3, texto = null) {
         }
         produtoListado = await produtos.json()
         geraProdutos(produtoListado);
+        produtoSelecionado = 0;
     }
     catch (error) {
         console.error(error);
@@ -92,7 +93,7 @@ async function geraProdutos(array) {
     }
     array.forEach(function (i) {
         let aside = document.createElement("aside");
-        aside.innerHTML = `<aside id="${i["id"]}" class="ProdutoListado" onclick="clickProduto(${i["id"]})">
+        aside.innerHTML = `<aside id="${i["id_produto"]}" class="ProdutoListado" onclick="clickProduto(${i["id_produto"]})">
         <div class="expandidor"></div>
         <div class="nome-codigo">${i["nome"]}</div>
         <div class="valor">${i["preco"]}</div>
@@ -122,15 +123,14 @@ async function deleteProduto() {
                     'Content-Type': 'application/json'
                 }
             });
-            if(!result.ok){
+            if (!result.ok) {
                 throw new Error("falha ao tentar excluir");
             }
             getProdutos(verificador);
-            produtoSelecionado=0;
         }
-        catch(erro){
+        catch (erro) {
             console.log(erro);
-        }    
+        }
     }
 }
 
@@ -157,4 +157,34 @@ async function requisicao() {
     } catch (error) {
         console.error("Request failed:", error);
     }
+}
+async function Inative(num) {
+    if (produtoSelecionado == 0) {
+        alert("Selecione um produto");
+        return;
+    }
+    for(let i in produtoListado){
+        if(produtoListado[i]["id_produto"]==produtoSelecionado && produtoListado[i]["status"]==num){
+            alert("Produto já está"+(num==0? "inativo": "ativo"));
+            return;
+        }
+    }
+
+    try{
+        let response= await fetch(`app/produtos/setStatus?id=${produtoSelecionado}&novoStatus=${num}`, {
+            method:"PUT",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        if(!response.ok){
+            throw new Error("Falha em mudar o status");
+        }
+        alert("Status alterado")
+        getProdutos(verificador);
+    }
+    catch(erro){
+        console.log(erro);
+    }
+    
 }

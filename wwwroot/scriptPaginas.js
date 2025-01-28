@@ -28,6 +28,10 @@ const paginas = {
                     <li class= "BtStatus" onclick="getProdutos(1)"><i></i>Ativos</li>
                     <li class= "BtStatus" onclick="getProdutos(0)"><i></i>inativos</li>
                 </ul>
+                <ul class="itens">
+                    <li class= "BtStatus" onclick="Inative(1)"><i></i>Ativar</li>
+                    <li class= "BtStatus" onclick="Inative(0)"><i></i>Inativar</li>
+                </ul>
             </li>
         </ul>
     </nav>
