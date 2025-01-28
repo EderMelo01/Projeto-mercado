@@ -10,3 +10,7 @@ obj/
 # Ignorar configurações locais
 .vs/
 *.user
+mysql_data/mysql.ibd
+mysql_data/mysql.ibd
+mysql_data/mysql.sock
+mysql_data/mysql.ibd
