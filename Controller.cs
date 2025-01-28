@@ -44,8 +44,8 @@ namespace PrimeiroProjeto
         }
 
 
-        [HttpPut("setStatus")]
-        public void SetStatusById([FromQuery]int id, [FromQuery]int novoStatus){
+        [HttpPut("{id}/{status}")]
+        public void SetStatusById(int id, int novoStatus){
             control.SetStatusById(id, novoStatus);
         }
 

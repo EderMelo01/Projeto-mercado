@@ -171,7 +171,7 @@ async function Inative(num) {
     }
 
     try{
-        let response= await fetch(`app/produtos/setStatus?id=${produtoSelecionado}&novoStatus=${num}`, {
+        let response= await fetch(`app/produtos/${produtoSelecionado}/${num}`, {
             method:"PUT",
             headers: {
                 'Content-Type': 'application/json'
