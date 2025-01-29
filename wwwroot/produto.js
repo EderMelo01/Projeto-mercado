@@ -1,23 +1,15 @@
 let produtoListado;
 let produtoSelecionado = 0;
-let cadastroProduto = `
-    <form method="PUT" name="cadastroProduto">
-        <label for= "pnome">Nome Produto </label>
-        <input type="text" id="pnome" name="pnome" required><br>
-        <p>Perecivel:</p><br>
-        <input type="radio" id="perecivel" value="nao"></input>
-        <label for= "perecivel" value="1">Sim</label>
-        <input type="radio" id="nperecivel" value="nao"></input>
-        <label for= "nperecivel" value="0">Não</label>
-    </form>
-`
+
+
 let verificador;
 function ifremeProduto() {
     if (produtoSelecionado == 0) {
-        let iframe = document.createElement("iframe");
-        iframe.srcdoc = cadastroProduto;
-        document.getElementById("conteiner").appendChild(iframe);
-        document.getElementsByTagName("html").style.display = "none";
+        var iframe = document.getElementById('modal');
+        myModal = new bootstrap.Modal(iframe);
+        myModal.show();
+
+
     }
 }
 
@@ -163,28 +155,28 @@ async function Inative(num) {
         alert("Selecione um produto");
         return;
     }
-    for(let i in produtoListado){
-        if(produtoListado[i]["id_produto"]==produtoSelecionado && produtoListado[i]["status"]==num){
-            alert("Produto já está"+(num==0? "inativo": "ativo"));
+    for (let i in produtoListado) {
+        if (produtoListado[i]["id_produto"] == produtoSelecionado && produtoListado[i]["status"] == num) {
+            alert("Produto já está" + (num == 0 ? "inativo" : "ativo"));
             return;
         }
     }
 
-    try{
-        let response= await fetch(`app/produtos/${produtoSelecionado}/${num}`, {
-            method:"PUT",
+    try {
+        let response = await fetch(`app/produtos/${produtoSelecionado}/${num}`, {
+            method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
             }
         });
-        if(!response.ok){
+        if (!response.ok) {
             throw new Error("Falha em mudar o status");
         }
         alert("Status alterado")
         getProdutos(verificador);
     }
-    catch(erro){
+    catch (erro) {
         console.log(erro);
     }
-    
+
 }

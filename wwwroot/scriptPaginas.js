@@ -35,7 +35,28 @@ const paginas = {
             </li>
         </ul>
     </nav>
+    <div id="modal" class="modal fade" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <div class="modal-body">
+            <form name="cadastroProduto">
+                <label for= "pnome">Nome Produto </label>
+                <input type="text" id="pnome" name="pnome" required><br>
+                <p>Perecivel:</p><br>
+                <input type="radio" id="perecivel" value="nao"></input>
+                <label for= "perecivel" value="1">Sim</label>
+                <input type="radio" id="nperecivel" value="nao"></input>
+                <label for= "nperecivel" value="0">Não</label>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
     
+
     `,
 };
 
@@ -52,14 +73,14 @@ function troca(caminho) {
 
 }
 
-function clickUser(){
-    let menuUsers= document.getElementById("menuUsers");
-    menuUsers.style.display= "block";
-    if(!menuUsers.addEventListener("mouseover", function(){return true})){
+function clickUser() {
+    let menuUsers = document.getElementById("menuUsers");
+    menuUsers.style.display = "block";
+    if (!menuUsers.addEventListener("mouseover", function () { return true })) {
         setTimeout(() => {
-            document.getElementById("menuUsers").style.display= "none"; 
+            document.getElementById("menuUsers").style.display = "none";
         }, 5000);
     }
 
- 
+
 }
