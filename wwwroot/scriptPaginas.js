@@ -44,6 +44,8 @@ const paginas = {
             <form name="cadastroProduto">
                 <label for= "pnome">Nome Produto </label>
                 <input type="text" id="pnome" name="pnome" required><br>
+                <label for= "ppreco">Preço Produto </label>
+                <input type="text" id="ppreco" name="ppreco" required><br>
                 <p>Perecivel:</p><br>
                 <input type="radio" id="perecivel" value="nao"></input>
                 <label for= "perecivel" value="1">Sim</label>
