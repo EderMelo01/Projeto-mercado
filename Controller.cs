@@ -31,13 +31,12 @@ namespace PrimeiroProjeto
             List<Dictionary<string, dynamic>> produtos= control.GetProdutos(query);
             return produtos != null ? Ok(produtos) : NotFound();
         }
-        /*[HttpGet("{id}")]
+        [HttpGet("{id}")]
         public IActionResult ById(int id){
 
-            var produtos= control.GetProdutos();
-            Dictionary<string, dynamic> produtoFiltrado= id!=0? produtos.Where(produto=> produto["id_produto"]== id).First(): null;
-            return produtoFiltrado!=null? Ok(produtoFiltrado) : NotFound();
-        }*/
+            var produto= control.GetProdutos($"WHERE id_produto ={id}");
+            return produto!=null? Ok(produto) : NotFound();
+        }
         [HttpDelete("{id}")]
         public void DeleteById(int id){
             control.DeleteById(id);

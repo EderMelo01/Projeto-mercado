@@ -28,6 +28,5 @@ async function verificacao(event){
         console.error(error);
     }
 }    
-
-
 document.getElementById("logar").addEventListener("submit", verificacao);
+

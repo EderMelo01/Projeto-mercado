@@ -41,15 +41,15 @@ const paginas = {
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
         <div class="modal-body">
-            <form name="cadastroProduto">
+            <form name="cadastroProduto" id="dados">
                 <label for= "pnome">Nome Produto </label>
                 <input type="text" id="pnome" name="pnome" required><br>
                 <label for= "ppreco">Preço Produto </label>
                 <input type="text" id="ppreco" name="ppreco" required><br>
                 <p>Perecivel:</p><br>
-                <input type="radio" id="perecivel" value="nao"></input>
+                <input type="radio" id="perecivel" value="1"></input>
                 <label for= "perecivel" value="1">Sim</label>
-                <input type="radio" id="nperecivel" value="nao"></input>
+                <input type="radio" id="nperecivel" value="0"></input>
                 <label for= "nperecivel" value="0">Não</label>
             </form>
         </div>
@@ -86,3 +86,31 @@ function clickUser() {
 
 
 }
+
+
+/*async function deslogar() {
+    try {
+        const logout = await fetch("api/user/logout", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        });
+
+        if (!logout.ok) {
+            throw new Error(await logout.text());
+        }
+
+        const result = await logout.text();
+        alert(result);
+
+        if (result === "Deslogado com sucesso") {
+            window.location.href = "index.html"; // Redireciona para a página inicial
+        }
+    } catch (error) {
+        console.error(error);
+        alert("Erro ao deslogar: " + error.message);
+    }
+}
+
+document.getElementById("logout").addEventListener("click", deslogar);*/

@@ -49,6 +49,7 @@ namespace PrimeiroProjeto
                 }
             }
         }
+         //[HttpPut("logout")] 
 
     }
 }

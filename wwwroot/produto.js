@@ -1,16 +1,11 @@
 let produtoListado;
 let produtoSelecionado = 0;
-
+let modalVazio = document.getElementById("modal");
 
 let verificador;
 function ifremeProduto() {
-    if (produtoSelecionado == 0) {
-        var iframe = document.getElementById('modal');
-        myModal = new bootstrap.Modal(iframe);
-        myModal.show();
-
-
-    }
+    myModal = new bootstrap.Modal(modalVazio);
+    myModal.show();
 }
 
 async function getProdutos(verificadorSelecionado = 3, texto = null) {
@@ -54,6 +49,7 @@ function clickProduto(idProduto) {
 
 
 async function alteraProduto() {
+    let modal = modalVazio;
     try {
         let requisicao = await fetch(`app/produtos/${produtoSelecionado}`, {
             method: "GET",
@@ -64,6 +60,13 @@ async function alteraProduto() {
         if (!requisicao.ok) {
             throw new Error("Falhou alterar o produto");
         }
+        let respostaJson= await requisicao.json();
+        document.getElementById("pnome").value= respostaJson[0]["nome"];
+        document.getElementById("ppreco").value= respostaJson[0]["preco"];
+        let radio= respostaJson[0]["perecivel"]=="Sim"?  "perecivel":"nperecivel" 
+        document.getElementById(radio).checked= true;
+        ifremeProduto();
+        modalVazio=modal;
     }
     catch (erro) {
         console.log(erro);
