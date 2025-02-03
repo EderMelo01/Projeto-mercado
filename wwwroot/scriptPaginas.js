@@ -53,6 +53,10 @@ const paginas = {
                 <label for= "nperecivel" value="0">Não</label>
             </form>
         </div>
+        <div class="modal-footer">
+        <button id="salvar" onclick="adicionaProduto()" type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
       </div>
     </div>
   </div>

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 using MySql.EntityFrameworkCore.DataAnnotations;
+using NHibernate.Linq.Functions;
 using Org.BouncyCastle.Crypto.Digests;
 
 namespace PrimeiroProjeto
@@ -64,7 +65,7 @@ namespace PrimeiroProjeto
             return users;
         }
         //////////////////////// Metodos do banco para os produtos
-        public void InsertProduto(string caminho)
+        /*public void InsertProduto(string caminho)
         {
             List<Dictionary<string, dynamic>> result = Produto.importacao(caminho);
             for (int i = 0; i < result.Count; i++)
@@ -74,7 +75,7 @@ namespace PrimeiroProjeto
                 selectCommand.ExecuteReader();
                 conexao.Close();
             }
-        }
+        }*/
         public List<Dictionary<string, dynamic>> GetProdutos(string texto)
         {
             MySqlConnection conexao = BancoDados.Banco.Conexao();
@@ -104,11 +105,30 @@ namespace PrimeiroProjeto
             conexao.Close();
 
         }
-        public void SetStatusById(int id, int novoStatus){
+        public void SetStatusById(int id, int novoStatus)
+        {
             MySqlConnection conexao = BancoDados.Banco.Conexao();
             MySqlCommand selectCommand = new MySqlCommand($"UPDATE PRODUTOS SET status={novoStatus} WHERE id_produto= {id};", conexao);
             selectCommand.ExecuteReader();
             conexao.Close();
         }
+        public bool InsertProduto(Produto produto)
+        {
+            MySqlConnection conexao = BancoDados.Banco.Conexao();
+            MySqlCommand selectCommand = new MySqlCommand($"INSERT INTO PRODUTOS(nome, preco,perecivel,status) VALUES ('{produto.nome}', {produto.preco},{produto.perecivel}, 1)", conexao);
+            var results = selectCommand.ExecuteReader();
+            conexao.Close();
+            return results != null ? true : false;
+        }
+        public int AlterarProduto(Produto produto, int id)
+        {
+            MySqlConnection conexao = BancoDados.Banco.Conexao();
+            MySqlCommand selectCommand = new MySqlCommand($"UPDATE PRODUTOS set nome='{produto.nome}', preco='{produto.preco.ToString().Replace(",", ".")}', perecivel='{produto.perecivel}' WHERE id_produto= {id} ", conexao);
+            var result = selectCommand.ExecuteReader();
+            conexao.Close();
+
+            return 0;
+        }
+
     }
 }

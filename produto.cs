@@ -1,15 +1,20 @@
 using System;
 using System.Data;
 using System.IO;
+using System.Text.Json.Serialization;
 using ExcelDataReader;
 
 public class Produto
 {
     public int id;
+    [JsonInclude]
     public string nome;
-    public double preco;
+    [JsonInclude]
+    public decimal preco;
+    [JsonInclude]
     public string imagem;
-    public bool perecivel;
+    [JsonInclude]
+    public int perecivel;
     public Produto()
     {
 

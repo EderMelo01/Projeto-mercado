@@ -58,7 +58,7 @@ async function alteraProduto() {
             }
         });
         if (!requisicao.ok) {
-            throw new Error("Falhou alterar o produto");
+            throw new Error("Falhou na busca");
         }
         let respostaJson= await requisicao.json();
         document.getElementById("pnome").value= respostaJson[0]["nome"];
@@ -67,6 +67,7 @@ async function alteraProduto() {
         document.getElementById(radio).checked= true;
         ifremeProduto();
         modalVazio=modal;
+        document.getElementById("salvar").setAttribute("onclick", "salvarProdutoAlterado()")
     }
     catch (erro) {
         console.log(erro);
@@ -74,7 +75,39 @@ async function alteraProduto() {
 
 }
 
+function camposProduto(){
+    let nome= document.getElementById("pnome").value;
+    let preco= document.getElementById("ppreco").value;
+    let perecivel= document.getElementById("perecivel").checked? 1 : 0;
+    const produto={
+        "nome": nome,
+        "preco": preco,
+        "perecivel": perecivel
+    }
+    return produto;
+}
 
+async function salvarProdutoAlterado() {
+    let produto= camposProduto();
+    try{
+        let requisicao= await fetch(`app/produtos/${produtoSelecionado}`,{
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(produto)
+        })
+        if(!requisicao.ok){
+            throw new Error("Erro ao atualizar o produto");
+        }
+
+        
+    }
+    catch(erro){
+        console.log(erro);
+    }
+    
+}
 
 
 
@@ -127,6 +160,27 @@ async function deleteProduto() {
             console.log(erro);
         }
     }
+}
+
+
+async function adicionaProduto(){
+    try {
+        var result = await fetch(`app/produtos/ProdutoNovo`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify(camposProduto())
+        });
+        if (!result.ok) {
+            throw new Error("falha ao tentar adicionar o produto");
+        }
+        getProdutos(verificador);
+    }
+    catch (erro) {
+        console.log(erro);
+    }
+
 }
 
 

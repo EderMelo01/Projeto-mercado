@@ -37,6 +37,7 @@ namespace PrimeiroProjeto
             var produto= control.GetProdutos($"WHERE id_produto ={id}");
             return produto!=null? Ok(produto) : NotFound();
         }
+
         [HttpDelete("{id}")]
         public void DeleteById(int id){
             control.DeleteById(id);
@@ -47,6 +48,17 @@ namespace PrimeiroProjeto
         public void SetStatusById(int id, int novoStatus){
             control.SetStatusById(id, novoStatus);
         }
+        
+        [HttpPut("{id}")]
+        public IActionResult SalvarProdutoAlterado([FromBody] Produto produto, int id){
+            int confirmacao= control.AlterarProduto(produto, id);
+            return confirmacao==0? NotFound() : Ok();
+        }
+        [HttpPost("ProdutoNovo")]
+        public IActionResult InsertProduto ([FromBody]Produto produto){
+            return control.InsertProduto(produto) ? Ok() : NotFound();
+        }
+
 
     }
 }
