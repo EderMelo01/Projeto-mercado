@@ -1,10 +1,15 @@
 let produtoListado;
 let produtoSelecionado = 0;
-let modalVazio = document.getElementById("modal");
-
+let modal = document.getElementById("modal");
+let modalVazio = modal.cloneNode(true);
+let myModal;
 let verificador;
+
 function ifremeProduto() {
-    myModal = new bootstrap.Modal(modalVazio);
+    myModal = new bootstrap.Modal(modal, {
+        backdrop: 'static',
+        keyboard: false
+    });
     myModal.show();
 }
 
@@ -49,7 +54,6 @@ function clickProduto(idProduto) {
 
 
 async function alteraProduto() {
-    let modal = modalVazio;
     try {
         let requisicao = await fetch(`app/produtos/${produtoSelecionado}`, {
             method: "GET",
@@ -60,14 +64,10 @@ async function alteraProduto() {
         if (!requisicao.ok) {
             throw new Error("Falhou na busca");
         }
-        let respostaJson= await requisicao.json();
-        document.getElementById("pnome").value= respostaJson[0]["nome"];
-        document.getElementById("ppreco").value= respostaJson[0]["preco"];
-        let radio= respostaJson[0]["perecivel"]=="Sim"?  "perecivel":"nperecivel" 
-        document.getElementById(radio).checked= true;
+        let respostaJson = await requisicao.json();
+        valuesForJson(respostaJson[0]);
         ifremeProduto();
-        modalVazio=modal;
-        document.getElementById("salvar").setAttribute("onclick", "salvarProdutoAlterado()")
+        document.getElementById("salvar").setAttribute("onclick", "salvarProdutoAlterado()");
     }
     catch (erro) {
         console.log(erro);
@@ -75,38 +75,39 @@ async function alteraProduto() {
 
 }
 
-function camposProduto(){
-    let nome= document.getElementById("pnome").value;
-    let preco= document.getElementById("ppreco").value;
-    let perecivel= document.getElementById("perecivel").checked? 1 : 0;
-    const produto={
+function camposProduto() {
+    let nome = document.getElementById("pnome").value;
+    let preco = document.getElementById("ppreco").value;
+    let perecivel = document.getElementById("perecivelSim").checked ? 1 : 0;
+    const produto = {
         "nome": nome,
-        "preco": preco,
+        "preco": parseFloat(preco),
         "perecivel": perecivel
     }
     return produto;
 }
 
 async function salvarProdutoAlterado() {
-    let produto= camposProduto();
-    try{
-        let requisicao= await fetch(`app/produtos/${produtoSelecionado}`,{
+    let produto = camposProduto();
+    try {
+        let requisicao = await fetch(`app/produtos/${produtoSelecionado}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(produto)
         })
-        if(!requisicao.ok){
+        if (!requisicao.ok) {
             throw new Error("Erro ao atualizar o produto");
         }
 
-        
+
     }
-    catch(erro){
+    catch (erro) {
         console.log(erro);
     }
-    
+    limparModal();
+
 }
 
 
@@ -163,31 +164,30 @@ async function deleteProduto() {
 }
 
 
-async function adicionaProduto(){
+async function adicionaProduto() {
     try {
         var result = await fetch(`app/produtos/ProdutoNovo`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body:JSON.stringify(camposProduto())
+            body: JSON.stringify(camposProduto())
         });
         if (!result.ok) {
             throw new Error("falha ao tentar adicionar o produto");
         }
-        getProdutos(verificador);
     }
     catch (erro) {
         console.log(erro);
     }
-
+    limparModal();
+    getProdutos(verificador);
 }
 
 
 
 
-async function requisicao() {
-    let code = document.getElementById("barras").value;
+async function requisicao(code) {
 
     let url = `https://api.cosmos.bluesoft.com.br/gtins/${code}.json`;
     try {
@@ -202,11 +202,24 @@ async function requisicao() {
             throw new Error();
         }
         var body = await response.json();
-        document.getElementById("name").value = body["description"];
+        valuesForJson({
+            "nome": body["description"],
+            "preco": 0,
+            "perecivel": "",
+            "imagem": body["thumbnail"]
+        });
     } catch (error) {
         console.error("Request failed:", error);
     }
 }
+
+document.getElementById("pcodigo").addEventListener("keydown", async function () {
+    if (this.value.length >= 13) {
+        await requisicao(this.value)
+    }
+});
+
+
 async function Inative(num) {
     if (produtoSelecionado == 0) {
         alert("Selecione um produto");
@@ -236,4 +249,17 @@ async function Inative(num) {
         console.log(erro);
     }
 
+}
+
+function valuesForJson(produto) {
+    document.getElementById("pnome").value = produto["nome"];
+    document.getElementById("ppreco").value = produto["preco"];
+    document.getElementById("imgProduto").src= produto["imagem"];
+    let radio = produto["perecivel"] == "Sim" ? "perecivelSim" : "perecivelNao"
+    document.getElementById(radio).checked = true;
+}
+
+function limparModal(){
+    modal = modalVazio;
+    myModal.modal("hide")
 }

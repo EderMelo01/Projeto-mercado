@@ -85,12 +85,14 @@ namespace PrimeiroProjeto
             List<Dictionary<string, dynamic>> produtos = [];
             while (result.Read())
             {
+
                 Dictionary<string, dynamic> produto = new Dictionary<string, dynamic>(){
                     {"id_produto", result.GetInt32("id_produto")},
                     {"nome", result.GetString("nome")},
                     {"preco", result.GetDouble("preco")},
                     {"perecivel", result.GetBoolean("perecivel")? "Sim": "Não"},
-                    {"status",result.GetBoolean("status")? 1: 0}
+                    {"status",result.GetBoolean("status")? 1: 0},
+                    {"imagem", ""}
                 };
                 produtos.Add(produto);
             }
@@ -112,23 +114,25 @@ namespace PrimeiroProjeto
             selectCommand.ExecuteReader();
             conexao.Close();
         }
-        public bool InsertProduto(Produto produto)
+        public bool InsertProduto(Produto produto)  
         {
             MySqlConnection conexao = BancoDados.Banco.Conexao();
-            MySqlCommand selectCommand = new MySqlCommand($"INSERT INTO PRODUTOS(nome, preco,perecivel,status) VALUES ('{produto.nome}', {produto.preco},{produto.perecivel}, 1)", conexao);
+            MySqlCommand selectCommand = new MySqlCommand($"INSERT INTO PRODUTOS(nome, preco,perecivel,status) VALUES ('{produto.nome}', {produto.preco.ToString().Replace(",", ".")},{produto.perecivel}, 1)", conexao);
             var results = selectCommand.ExecuteReader();
             conexao.Close();
-            return results != null ? true : false;
+            return results!=null? true: false;
         }
         public int AlterarProduto(Produto produto, int id)
         {
             MySqlConnection conexao = BancoDados.Banco.Conexao();
             MySqlCommand selectCommand = new MySqlCommand($"UPDATE PRODUTOS set nome='{produto.nome}', preco='{produto.preco.ToString().Replace(",", ".")}', perecivel='{produto.perecivel}' WHERE id_produto= {id} ", conexao);
-            var result = selectCommand.ExecuteReader();
+            var result= selectCommand.ExecuteReader();
             conexao.Close();
-
-            return 0;
+            if(result!=null){
+                return result.RecordsAffected;
+            }
+            return 0;  
         }
-
+        
     }
 }

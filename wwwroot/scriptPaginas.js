@@ -35,32 +35,51 @@ const paginas = {
             </li>
         </ul>
     </nav>
-    <div id="modal" class="modal fade" id="exampleModal" tabindex="-1">
-        <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <div class="modal-body">
-            <form name="cadastroProduto" id="dados">
-                <label for= "pnome">Nome Produto </label>
-                <input type="text" id="pnome" name="pnome" required><br>
-                <label for= "ppreco">Preço Produto </label>
-                <input type="text" id="ppreco" name="ppreco" required><br>
-                <p>Perecivel:</p><br>
-                <input type="radio" id="perecivel" value="1"></input>
-                <label for= "perecivel" value="1">Sim</label>
-                <input type="radio" id="nperecivel" value="0"></input>
-                <label for= "nperecivel" value="0">Não</label>
-            </form>
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tituloModal">Título do Modal</h5>
+                <button type="button" class="btn-close" onclick= "limparModal()" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <form name="cadastroProduto" id="dados" action="#">
+
+                    <img id="imgProduto"  width="150" height="150">
+                    <div class="mb-3">
+                        <label for="pnome" class="form-label">Nome Produto</label>
+                        <input type="text" id="pnome" name="pnome" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="pcodigo" class="form-label">Código de barras</label>
+                        <input type="number" id="pcodigo" name="codigo" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="ppreco" class="form-label">Preço Produto</label>
+                        <input type="text" id="ppreco" name="ppreco" class="form-control" required>
+                    </div>
+
+                    <p>Perecível:</p>
+                    <div class="form-check">
+                        <input type="radio" id="perecivelSim" name="perecivel" value="1" class="form-check-input">
+                        <label for="perecivelSim" class="form-check-label">Sim</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="perecivelNao" name="perecivel" value="0" class="form-check-input">
+                        <label for="perecivelNao" class="form-check-label">Não</label>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="limparModal()">Fechar</button>
+                        <button  id="salvar" type="button" onclick="adicionaProduto()" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="modal-footer">
-        <button id="salvar" onclick="adicionaProduto()" type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-      </div>
     </div>
-  </div>
-    </div>
+</div>
+
     
 
     `,
