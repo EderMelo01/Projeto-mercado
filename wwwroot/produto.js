@@ -2,11 +2,11 @@ let produtoListado;
 let produtoSelecionado = 0;
 let modal = document.getElementById("modal");
 let modalVazio = modal.cloneNode(true);
-let myModal;
 let verificador;
 
-function ifremeProduto() {
-    myModal = new bootstrap.Modal(modal, {
+function ifremeProduto(produto= null) {
+    produto==null? limparModal(): valuesForJson(produto);
+    let myModal= new bootstrap.Modal(modal, {
         backdrop: 'static',
         keyboard: false
     });
@@ -65,8 +65,7 @@ async function alteraProduto() {
             throw new Error("Falhou na busca");
         }
         let respostaJson = await requisicao.json();
-        valuesForJson(respostaJson[0]);
-        ifremeProduto();
+        ifremeProduto(respostaJson[0]);
         document.getElementById("salvar").setAttribute("onclick", "salvarProdutoAlterado()");
     }
     catch (erro) {
@@ -106,7 +105,6 @@ async function salvarProdutoAlterado() {
     catch (erro) {
         console.log(erro);
     }
-    limparModal();
 
 }
 
@@ -180,7 +178,6 @@ async function adicionaProduto() {
     catch (erro) {
         console.log(erro);
     }
-    limparModal();
     getProdutos(verificador);
 }
 
@@ -261,5 +258,4 @@ function valuesForJson(produto) {
 
 function limparModal(){
     modal = modalVazio;
-    myModal.modal("hide")
 }
