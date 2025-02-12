@@ -1,7 +1,6 @@
 let produtoListado;
 let produtoSelecionado = 0;
 let modal = document.getElementById("modal");
-let modalVazio = modal.cloneNode(true);
 let verificador;
 
 function ifremeProduto(produto= null) {
@@ -257,5 +256,5 @@ function valuesForJson(produto) {
 }
 
 function limparModal(){
-    modal = modalVazio;
+    document.getElementById("dados").reset();
 }
