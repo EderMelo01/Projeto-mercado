@@ -87,12 +87,6 @@ const paginas = {
             <button onclick="getContasAPagar()">Procurar</button>
         </div>
 
-        <div>
-            <h3>Contas a Receber</h3>
-            <input type="text" id="filtroContaReceber" placeholder="Digite o nome da conta a receber"></input>
-            <button onclick="getContasAReceber()">Procurar</button>
-        </div>
-
         <aside>
             <div class="expandidor"></div>
             <div class="nome-codigo">Descrição</div>
@@ -111,16 +105,16 @@ const paginas = {
         <ul>
             <li class="menu">Contas
                 <ul class="itens">
-                    <li data-acao="novo" data-tipo="financeiro"><i class="fa fa-plus"></i>Adicionar Conta</li>
-                    <li data-acao="alterar" data-tipo="financeiro"><i class="fa fa-pencil"></i>Alterar Conta</li>
-                    <li data-acao="excluir" data-tipo="financeiro"><i class="fa fa-trash"></i>Excluir Conta</li>
+                    <li data-acao="novo" id="1" data-tipo="financeiro"><i class="fa fa-plus"></i>Adicionar Conta</li>
+                    <li data-acao="alterar"id="2" data-tipo="financeiro"><i class="fa fa-pencil"></i>Alterar Conta</li>
+                    <li data-acao="excluir"id="3" data-tipo="financeiro"><i class="fa fa-trash"></i>Excluir Conta</li>
                 </ul>
             </li>
             <li class="menu">Contas a Receber
                 <ul class="itens">
-                    <li data-acao="novo" data-tipo="financeiro"><i class="fa fa-plus"></i>Adicionar Conta a Receber</li>
-                    <li data-acao="alterar" data-tipo="financeiro"><i class="fa fa-pencil"></i>Alterar Conta a Receber</li>
-                    <li data-acao="excluir" data-tipo="financeiro"><i class="fa fa-trash"></i>Excluir Conta a Receber</li>
+                    <li data-acao="novo"id="4" data-tipo="financeiro"><i class="fa fa-plus"></i>Adicionar Conta a Receber</li>
+                    <li data-acao="alterar"id="5" data-tipo="financeiro"><i class="fa fa-pencil"></i>Alterar Conta a Receber</li>
+                    <li data-acao="excluir"id="6" data-tipo="financeiro"><i class="fa fa-trash"></i>Excluir Conta a Receber</li>
                 </ul>
             </li>
         </ul>
@@ -144,13 +138,22 @@ const paginas = {
                             <label for="valorConta" class="form-label">Valor da Conta</label>
                             <input type="text" id="valorConta" name="valor" class="form-control" required>
                         </div>
+                        <!--<div class="mb-3">
+                            <label for="loteId" class="form-label">Numero do Lote </label>
+                            <input type="text" id="loteId" name="loteId" class="form-control" required>
+                        </div>-->
+                        <div class="mb-3">
+                            <label for="dataEmissao" class="form-label">Data de Emissão</label>
+                            <input type="date" id="dataEmissao" name="dataEmissao" class="form-control" required>
+                        </div>
+
                         <div class="mb-3">
                             <label for="dataVencimento" class="form-label">Data de Vencimento</label>
                             <input type="date" id="dataVencimento" name="dataVencimento" class="form-control" required>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="limparModalConta()">Fechar</button>
-                            <button id="salvarConta" type="button" onclick="adicionarConta()" class="btn btn-primary">Salvar</button>
+                            <button id="salvarConta" type="button" onclick="salvarNovaConta(true)" class="btn btn-primary">Salvar</button>
                         </div>
                     </form>
                 </div>
@@ -158,37 +161,7 @@ const paginas = {
         </div>
     </div>
 
-    <!-- Modal para Contas a Receber -->
-    <div class="modal fade" id="modalContaReceber" tabindex="-1" aria-labelledby="tituloModalContaReceber" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="tituloModalContaReceber">Título do Modal Conta a Receber</h5>
-                    <button type="button" class="btn-close" onclick="limparModalContaReceber()" aria-label="Fechar"></button>
-                </div>
-                <div class="modal-body">
-                    <form name="cadastroContaReceber" id="dadosContaReceber" action="#">
-                        <div class="mb-3">
-                            <label for="descricaoContaReceber" class="form-label">Descrição da Conta a Receber</label>
-                            <input type="text" id="descricaoContaReceber" name="descricao" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="valorContaReceber" class="form-label">Valor da Conta a Receber</label>
-                            <input type="text" id="valorContaReceber" name="valor" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dataVencimentoReceber" class="form-label">Data de Vencimento</label>
-                            <input type="date" id="dataVencimentoReceber" name="dataVencimento" class="form-control" required>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="limparModalContaReceber()">Fechar</button>
-                            <button id="salvarContaReceber" type="button" onclick="adicionarContaReceber()" class="btn btn-primary">Salvar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 `
 
 };
@@ -214,103 +187,112 @@ function clickUser() {
         }, 5000);
     }
 }
-document.addEventListener("DOMContentLoaded", function () {
-    // Adiciona eventos para os menus de Produto e Financeiro
-    document.addEventListener("click", function (event) {
-        if (event.target.tagName === "LI" && event.target.dataset.acao) {
-            abrirModal(event.target.dataset.acao, event.target.dataset.tipo);
-        }
-    });
-});
+function abrirModalConta(acao, tipoConta) {
+    const modalTitulo = document.getElementById("tituloModalConta");
+    const btnSalvar = document.getElementById("salvarConta");
+    const descricao = document.getElementById("descricaoConta");
+    const valor = document.getElementById("valorConta");
+    //const loteId = document.getElementById("loteId");
+    const dataEmissao = document.getElementById("dataEmissao");
+    const dataVencimento = document.getElementById("dataVencimento");
 
-// Função para abrir modais de Produto ou Financeiro
-function abrirModal(acao, tipo) {
-    let modalTitulo = document.getElementById("tituloModal");
-    let btnSalvar = document.getElementById("salvar");
-    let formulario = document.getElementById("dados");
-
-    if (tipo === "financeiro") {
-        modalTitulo = document.getElementById("tituloModalConta");
-        btnSalvar = document.getElementById("salvarConta");
-        formulario = document.getElementById("dadosConta");
-    }
-
-    // Define o título e a ação do botão conforme a ação selecionada
-    if (acao === "novo") {
-        modalTitulo.textContent = tipo === "produto" ? "Adicionar Produto" : "Adicionar Conta";
+    // Ajustando título e comportamento do botão com base na ação
+    if (acao === "adicionar") {
+        modalTitulo.textContent = "Adicionar Conta";
         btnSalvar.textContent = "Salvar";
-        btnSalvar.setAttribute("onclick", tipo === "produto" ? "adicionaProduto()" : "adicionarConta()");
-    } else if (acao === "alterar") {
-        modalTitulo.textContent = tipo === "produto" ? "Alterar Produto" : "Alterar Conta";
-        btnSalvar.textContent = "Alterar";
-        btnSalvar.setAttribute("onclick", tipo === "produto" ? "alteraProduto()" : "alterarConta()");
-    } else if (acao === "excluir") {
-        modalTitulo.textContent = tipo === "produto" ? "Excluir Produto" : "Excluir Conta";
-        btnSalvar.textContent = "Confirmar Exclusão";
-        btnSalvar.setAttribute("onclick", tipo === "produto" ? "deleteProduto()" : "deletarConta()");
+        btnSalvar.setAttribute("onclick", `salvarNovaConta(${tipoConta})`);
+        descricao.disabled = false;
+        valor.disabled = false;
+        //loteId.disabled = false;
+        dataEmissao.disabled = false;
+        dataVencimento.disabled = false;
     }
+    else if (acao === "alterar") {
+        modalTitulo.textContent = "Alterar Conta";
+        btnSalvar.textContent = "Alterar";
+        btnSalvar.setAttribute("onclick", "salvarAlteracaoConta()");
+        descricao.disabled = false;
+        valor.disabled = false;
+       // loteId.disabled = false;
+        dataEmissao.disabled = false;
+        dataVencimento.disabled = false;
+    }
+    else if (acao === "excluir") {
+        modalTitulo.textContent = "Excluir Conta";
+        btnSalvar.textContent = "Confirmar Exclusão";
+        btnSalvar.setAttribute("onclick", "confirmarExclusaoConta()");
+        descricao.disabled = true;
+        valor.disabled = true;
+        //loteId.disabled = true;
+        dataEmissao.disabled = true;
+        dataVencimento.disabled = true;
+    }
+    
 
-    // Exibe o modal correto
-    let modal = new bootstrap.Modal(document.getElementById(tipo === "produto" ? "modal" : "modalConta"));
+    // Abrindo o modal
+    let modal = new bootstrap.Modal(document.getElementById("modalConta"));
     modal.show();
-}
-
-// Função para limpar os modais
-function limparModal() {
-    document.getElementById("dados").reset();
 }
 
 function limparModalConta() {
     document.getElementById("dadosConta").reset();
 }
 
-// Adicionar ações dos modais de produto e financeiro
-function adicionaProduto() {
-    alert("Produto adicionado!");
+
+function buscarValores(tipoConta) {
+    return {
+        "descricao": document.getElementById("descricaoConta").value,
+        "valor": document.getElementById("valorConta").value,
+        //"id_lote":document.getElementById("loteId").value,
+        "data_emissao":document.getElementById("dataEmissao").value,
+        "data_vencimento": document.getElementById("dataVencimento").value,
+        "Is_receber": tipoConta,
+        "id_prestador": 1
+    }
+}
+// Ações de salvar (você pode substituir pelo código correto)
+async function salvarNovaConta(tipoConta) {
+    try {
+        const valores = buscarValores(tipoConta);
+        console.log("Valores enviados para API:", valores);
+
+        let save = await fetch("app/Contas/AdicionarContas", {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify(valores)
+        });
+
+        if(save.ok){
+            alert("Conta adicionada com sucesso");
+            return;
+        }
+
+        throw new Error("Erro ao adicionar a conta");
+
+    } catch (error) {
+        console.error("Erro ao salvar conta:", error);
+    }
 }
 
-function alteraProduto() {
-    alert("Produto alterado!");
+
+function salvarAlteracaoConta() {
+    alert("Conta alterada com sucesso!");
 }
 
-function deleteProduto() {
-    alert("Produto excluído!");
+function confirmarExclusaoConta() {
+    alert("Conta excluída com sucesso!");
 }
 
-function adicionarConta() {
-    alert("Conta adicionada!");
-}
-
-function alterarConta() {
-    alert("Conta alterada!");
-}
-
-function deletarConta() {
-    alert("Conta excluída!");
-}
-// Função para buscar contas a receber
-async function getContasAReceber() {
-    // Lógica para buscar e atualizar a lista de contas a receber
-}
-
-// Funções para adicionar, alterar e excluir contas a receber
-function adicionarContaReceber() {
-    alert("Conta a Receber adicionada!");
-}
-
-function alterarContaReceber() {
-    alert("Conta a Receber alterada!");
-}
-
-function deletarContaReceber() {
-    alert("Conta a Receber excluída!");
-}
-
-// Limpar campos do modal de Conta a Receber
-function limparModalContaReceber() {
-    document.getElementById("dadosContaReceber").reset();
-}
-
+document.addEventListener("DOMContentLoaded", function () {
+    // Adiciona eventos para os menus de Produto e Financeiro
+    document.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI" && event.target.dataset.acao) {
+            abrirModalConta(event.target.dataset.acao, event.target.id>3? 1: 0, event.target.dataset.tipo);
+        }
+    });
+});
 
 
 /*async function deslogar() {

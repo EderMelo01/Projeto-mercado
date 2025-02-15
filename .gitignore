@@ -15,3 +15,10 @@ mysql_data/mysql.ibd
 mysql_data/mysql.sock
 mysql_data/mysql.ibd
 mysql_data/undo_001
+mysql_data/binlog.000026
+mysql_data/binlog.000027
+mysql_data/binlog.000028
+mysql_data/binlog.000029
+mysql_data/binlog.000030
+mysql_data/#ib_16384_0.dblwr
+mysql_data/binlog.index

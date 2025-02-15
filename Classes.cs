@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 
 public class User
 {
@@ -45,4 +45,31 @@ public class Pessoa
     public required string nome;
     [JsonInclude]
     public required string senha;
+}
+public class Contas
+{
+
+   
+    public int id_conta;
+    [JsonInclude]
+    public required string descricao;
+    [JsonInclude]
+    public Boolean Is_receber;
+    [JsonInclude]
+    public decimal valor;
+    [JsonInclude]
+    public int id_prestador;
+    [JsonInclude]
+    public DateTime data_emissao;
+    [JsonInclude]
+    public DateTime data_vencimento;
+    public Prestador prestador;
+    //[JsonInclude]
+    //public int id_lote;
+}
+public class Prestador
+{
+    public int id_prestador;
+    public string nome;
+
 }
