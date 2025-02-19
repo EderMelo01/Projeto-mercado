@@ -1,7 +1,14 @@
 let produtoListado;
-let produtoSelecionado = 0;
-let modal = document.getElementById("modal");
+let produtoSelecionado;
+let modal;
 let verificador;
+
+
+function inicializar(){
+    produtoSelecionado= 0;
+    modal= document.getElementById("modal");
+    getProdutos();
+}
 
 function ifremeProduto(produto= null) {
     produto==null? limparModal(): valuesForJson(produto);
