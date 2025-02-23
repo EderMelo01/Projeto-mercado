@@ -47,5 +47,25 @@ namespace PrimeiroProjeto
                     conexao.Close();
             }
         }
+        public List<Dictionary<string, dynamic>> GetContas()
+        {
+            conexao = BancoDados.Banco.Conexao();
+            MySqlCommand selectCommand = new MySqlCommand("SELECT * FROM CONTAS INNER JOIN PRESTADOR p ON id_prestador=id_prestador;", conexao);
+            List<Dictionary<string, dynamic>> contas = [];
+            var result = selectCommand.ExecuteReader();
+            while (result.Read())
+            {
+                Dictionary<string, dynamic> conta = new Dictionary<string, dynamic>(){
+                    { "descricao", result.GetString("descricao") },
+                    { "pagador", result.GetString("nome")?? result.GetString("cpf")},
+                    { "valor", result.GetDecimal("valor")},
+                    { "data_emissao", result.GetDateTime("data_emissao") },
+                    { "data_vencimento", result.GetDateTime("data_vencimento") }
+                };
+                contas.Append(conta);
+            }
+            conexao.Close();
+            return contas;
+        }
     }
 }

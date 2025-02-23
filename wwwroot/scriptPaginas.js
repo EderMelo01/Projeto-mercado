@@ -88,33 +88,22 @@ const paginas = {
         </div>
 
         <aside>
-            <div class="expandidor"></div>
             <div class="nome-codigo">Descrição</div>
             <div class="valor">Valor</div>
+            <div class="pagador">Pagador</div>
             <div class="data">Data de Vencimento</div>
-            <div class="status">Status</div>
-            <div class="divididor"></div>
+            <div class="data">Data Emissão</div>
         </aside>
-
-        <div id="listaContas">
-            <!-- As contas a pagar e a receber serão listadas aqui -->
-        </div>
+        
     </div>
 
     <nav>
         <ul>
             <li class="menu">Contas
                 <ul class="itens">
-                    <li data-acao="novo" id="1" data-tipo="financeiro"><i class="fa fa-plus"></i>Adicionar Conta</li>
-                    <li data-acao="alterar"id="2" data-tipo="financeiro"><i class="fa fa-pencil"></i>Alterar Conta</li>
-                    <li data-acao="excluir"id="3" data-tipo="financeiro"><i class="fa fa-trash"></i>Excluir Conta</li>
-                </ul>
-            </li>
-            <li class="menu">Contas a Receber
-                <ul class="itens">
-                    <li data-acao="novo"id="4" data-tipo="financeiro"><i class="fa fa-plus"></i>Adicionar Conta a Receber</li>
-                    <li data-acao="alterar"id="5" data-tipo="financeiro"><i class="fa fa-pencil"></i>Alterar Conta a Receber</li>
-                    <li data-acao="excluir"id="6" data-tipo="financeiro"><i class="fa fa-trash"></i>Excluir Conta a Receber</li>
+                    <li data-acao="novo"id="4" data-tipo="financeiro"><i class="fa fa-plus"></i>Adicionar Conta </li>
+                    <li data-acao="alterar"id="5" data-tipo="financeiro"><i class="fa fa-pencil"></i>Alterar Conta </li>
+                    <li data-acao="excluir"id="6" data-tipo="financeiro"><i class="fa fa-trash"></i>Excluir Conta </li>
                 </ul>
             </li>
         </ul>
@@ -131,6 +120,12 @@ const paginas = {
                 <div class="modal-body">
                     <form name="cadastroConta" id="dadosConta" action="#">
                         <div class="mb-3">
+                         <input type="radio" name="tipoConta" id="Pagar">
+                        <label for="Pagar">Pagar</label>
+                        <input type="radio" name="tipoConta" id="Receber">
+                        <label for="Receber">Receber</label>
+                        </div>
+                         <div class="mb-3">
                             <label for="descricaoConta" class="form-label">Descrição da Conta</label>
                             <input type="text" id="descricaoConta" name="descricao" class="form-control" required>
                         </div>
@@ -160,7 +155,7 @@ const paginas = {
             </div>
         </div>
     </div>
-
+    
    
 `
 
