@@ -103,7 +103,7 @@ document.addEventListener("click", function (event) {
     }
 });
 
-async function getContas() {
+/*async function getContas() {
     try {
         let req= await fetch("app/Contas/getcontas", {
             method: 'GET',
@@ -133,3 +133,4 @@ async function getContas() {
     }
 }
 getContas();
+*/
