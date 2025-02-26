@@ -16,6 +16,7 @@
 ./binlog.000025
 ./binlog.000026
 ./binlog.000027
+<<<<<<< HEAD
 ./binlog.000028
 ./binlog.000029
 ./binlog.000030
@@ -25,3 +26,5 @@
 ./binlog.000002
 ./binlog.000003
 >>>>>>> Financeiro
+=======
+>>>>>>> correcao
