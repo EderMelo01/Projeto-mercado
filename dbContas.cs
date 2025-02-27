@@ -50,7 +50,7 @@ namespace PrimeiroProjeto
         public List<Dictionary<string, dynamic>> GetContas()
         {
             conexao = BancoDados.Banco.Conexao();
-            MySqlCommand selectCommand = new MySqlCommand("SELECT * FROM CONTAS INNER JOIN PRESTADOR p ON id_prestador=id_prestador;", conexao);
+            MySqlCommand selectCommand = new MySqlCommand("SELECT * FROM CONTAS c INNER JOIN PRESTADOR p ON c.id_prestador= p.id_prestador;", conexao);
             List<Dictionary<string, dynamic>> contas = [];
             var result = selectCommand.ExecuteReader();
             while (result.Read())
@@ -62,7 +62,7 @@ namespace PrimeiroProjeto
                     { "data_emissao", result.GetDateTime("data_emissao") },
                     { "data_vencimento", result.GetDateTime("data_vencimento") }
                 };
-                contas.Append(conta);
+                contas.Add(conta);
             }
             conexao.Close();
             return contas;

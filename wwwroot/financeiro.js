@@ -103,7 +103,7 @@ document.addEventListener("click", function (event) {
     }
 });
 
-/*async function getContas() {
+async function getContas() {
     try {
         let req= await fetch("app/Contas/getcontas", {
             method: 'GET',
@@ -117,7 +117,8 @@ document.addEventListener("click", function (event) {
         let contas= await req.json();
         let corpo= document.getElementById("coluna");
         for(let i=0; i<contas.length; i++){
-            let elemento= document.createElement("div").innerHTML=`<div id="listaContas">
+            let elemento= document.createElement("div");
+            elemento.innerHTML=`<div id="listaContas">
             <div class="transacao">
                 <div id="desc2">${contas[i]["descricao"]}</div>
                 <div id="valor2">${contas[i]["valor"]}</div>
@@ -133,4 +134,3 @@ document.addEventListener("click", function (event) {
     }
 }
 getContas();
-*/

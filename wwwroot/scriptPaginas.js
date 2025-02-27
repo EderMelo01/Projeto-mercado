@@ -183,31 +183,3 @@ function clickUser() {
         }, 5000);
     }
 }
-
-
-/*async function deslogar() {
-    try {
-        const logout = await fetch("api/user/logout", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            }
-        });
-
-        if (!logout.ok) {
-            throw new Error(await logout.text());
-        }
-
-        const result = await logout.text();
-        alert(result);
-
-        if (result === "Deslogado com sucesso") {
-            window.location.href = "index.html"; // Redireciona para a página inicial
-        }
-    } catch (error) {
-        console.error(error);
-        alert("Erro ao deslogar: " + error.message);
-    }
-}
-
-document.getElementById("logout").addEventListener("click", deslogar); */
