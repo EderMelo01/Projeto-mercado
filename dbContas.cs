@@ -22,8 +22,8 @@ namespace PrimeiroProjeto
                 conexao = BancoDados.Banco.Conexao();
 
                 // Converte as datas para o formato correto do MySQL
-                string dataVencimentoFormatada = conta.data_vencimento.ToString("yyyy-MM-dd HH:mm:ss");
-                string dataEmissaoFormatada = conta.data_emissao.ToString("yyyy-MM-dd HH:mm:ss");
+                string dataVencimentoFormatada = conta.data_vencimento.ToString("yyyy-MM-dd");
+                string dataEmissaoFormatada = conta.data_emissao.ToString("yyyy-MM-dd");
 
                 // Query SQL corrigida
                 string query = $@"
@@ -47,20 +47,22 @@ namespace PrimeiroProjeto
                     conexao.Close();
             }
         }
-        public List<Dictionary<string, dynamic>> GetContas()
+        public List<Dictionary<string, dynamic>> GetContas(int num)
         {
             conexao = BancoDados.Banco.Conexao();
-            MySqlCommand selectCommand = new MySqlCommand("SELECT * FROM CONTAS c INNER JOIN PRESTADOR p ON c.id_prestador= p.id_prestador;", conexao);
+            MySqlCommand selectCommand = new MySqlCommand($"SELECT * FROM CONTAS c INNER JOIN PRESTADOR p ON c.id_prestador= p.id_prestador WHERE Is_receber = {num};", conexao);
             List<Dictionary<string, dynamic>> contas = [];
             var result = selectCommand.ExecuteReader();
             while (result.Read())
             {
                 Dictionary<string, dynamic> conta = new Dictionary<string, dynamic>(){
+                    {"id", result.GetInt64("id_conta")},
                     { "descricao", result.GetString("descricao") },
                     { "pagador", result.GetString("nome")?? result.GetString("cpf")},
                     { "valor", result.GetDecimal("valor")},
                     { "data_emissao", result.GetDateTime("data_emissao") },
-                    { "data_vencimento", result.GetDateTime("data_vencimento") }
+                    { "data_vencimento", result.GetDateTime("data_vencimento") },
+                    {"vencida", result.GetDateTime("data_vencimento") < DateTime.Now}
                 };
                 contas.Add(conta);
             }

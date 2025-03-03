@@ -18,9 +18,9 @@ public class ControleContas : ControllerBase
     {
         return db.AdicionarContas(contas)? Ok(): NotFound();
     }
-    [HttpGet("getcontas")]
-    public IActionResult GetContas(){
-        return Ok(db.GetContas());
+    [HttpGet("getcontas/{num}")]
+    public IActionResult GetContas([FromRoute]int num){
+        return Ok(db.GetContas(num));
     }
 
 }

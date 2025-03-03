@@ -83,6 +83,10 @@ const paginas = {
 
         <div>
             <h3>Contas a Pagar</h3>
+            <input type="radio" id="receber" name="TypeAcount" value="1" class="form-check-input">
+            <label for="receber" class="form-check-label" style="margin-right: 10px;">Receber</label>
+             <input type="radio" id="pagar" name="TypeAcount" value="1" class="form-check-input">
+            <label for="pagar" class="form-check-label">Pagar</label>
             <input type="text" id="filtroContaPagar" placeholder="Digite o nome da conta a pagar"></input>
             <button onclick="getContasAPagar()">Procurar</button>
         </div>
