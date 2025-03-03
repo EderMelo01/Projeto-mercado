@@ -1,3 +1,5 @@
+let contaSelecionada = 0;
+
 function abrirModalConta(acao) {
     const modalTitulo = document.getElementById("tituloModalConta");
     const btnSalvar = document.getElementById("salvarConta");
@@ -106,6 +108,7 @@ document.addEventListener("click", function (event) {
 async function getContas(num) {
     let corpo = document.getElementById("coluna");
     let filhos = document.getElementsByClassName("transacao");
+    contaSelecionada=0;
     for (i in filhos) {
         for (let lf of filhos) {
             lf.remove();
@@ -124,23 +127,19 @@ async function getContas(num) {
         let contas = await req.json();
         for (let i = 0; i < contas.length; i++) {
             let elemento = document.createElement("div");
-            elemento.innerHTML = `<div id="listaContas">
-            <div class="transacao" id= ${contas[i]["id"]}>
+            elemento.innerHTML = `<div class="transacao" id= ${contas[i]["id"]} onclick="getId(${contas[i]["id"]})">
                 <div id="desc2">${contas[i]["descricao"]}</div>
                 <div id="valor2">${contas[i]["valor"]}</div>
                 <div id="pagador2">${contas[i]["pagador"]}</div>
-                <div id="vencimento2">${new Date(contas[i]["data_vencimento"]).toDateString()}</div>
-                <div id="emissao2">${contas[i]["data_emissao"]}</div>
-            </div>
-        </div>`
+                <div id="vencimento2">${new Date(contas[i]["data_vencimento"]).toLocaleDateString("pt-BR")}</div>
+                <div id="emissao2">${new Date(contas[i]["data_emissao"]).toLocaleDateString("pt-BR")}</div>
+            </div>`
             corpo.appendChild(elemento);
             if (new Date(contas[i]["data_vencimento"]) < new Date()) {
-                document.getElementById(contas[i]["id"]).style.backgroundColor = "red";
-                console.log("vermelho")
+                document.getElementById(contas[i]["id"]).style.backgroundColor = "#fd8c8c";
             }
             else {
-                document.getElementById(contas[i]["id"]).style.backgroundColor = "green";
-                console.log("verde")
+                document.getElementById(contas[i]["id"]).style.backgroundColor = "#8dfd8c";
             }
         }
     } catch (error) {
@@ -153,3 +152,10 @@ document.getElementById("pagar").addEventListener("click", function () {
 document.getElementById("receber").addEventListener("click", function () {
     getContas(1);
 })
+function getId(num){
+        if (contaSelecionada != 0) {
+            document.getElementById(contaSelecionada).style.filter = "brightness(100%)";
+        }
+        contaSelecionada = num;
+        document.getElementById(contaSelecionada).style.filter = "brightness(52%)";
+}
