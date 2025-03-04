@@ -61,8 +61,7 @@ namespace PrimeiroProjeto
                     { "pagador", result.GetString("nome")?? result.GetString("cpf")},
                     { "valor", result.GetDecimal("valor")},
                     { "data_emissao", result.GetDateTime("data_emissao") },
-                    { "data_vencimento", result.GetDateTime("data_vencimento") },
-                    {"vencida", result.GetDateTime("data_vencimento") < DateTime.Now}
+                    { "data_vencimento", result.GetDateTime("data_vencimento") }
                 };
                 contas.Add(conta);
             }
