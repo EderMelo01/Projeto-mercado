@@ -74,12 +74,23 @@ namespace PrimeiroProjeto
             var result = selectCommand.ExecuteReader();
             conexao.Close();
         }
-        public void UpdateAcount(int num){
-            conexao=BancoDados.Banco.Conexao();
-            MySqlCommand selectCommand = new MySqlCommand($"UPDATE CONTAS SET Is_receber = true WHERE id_conta = {num}",conexao);
-            var result = selectCommand.ExecuteReader();
+        public int UpdateAcount(Contas contas, int id)
+        {
+            MySqlConnection conexao = BancoDados.Banco.Conexao();
+            MySqlCommand selectCommand = new MySqlCommand($"UPDATE CONTAS set descricao='{contas.descricao}', Is_receber={contas.Is_receber}, valor='{contas.valor}',id_prestador={contas.id_prestador},id_cliente={contas.id_cliente},data_emissao='{contas.data_emissao}',data_vencimento='{contas.data_vencimento}' WHERE id_conta= {id} ", conexao);
+            var result= selectCommand.ExecuteReader();
             conexao.Close();
-
+            if(result!=null){
+                return result.RecordsAffected;
+            }
+            return 0;  
         }
+       
     }
 }
+
+        
+
+        
+  
+

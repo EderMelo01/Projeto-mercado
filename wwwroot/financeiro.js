@@ -100,6 +100,7 @@ async function salvarAlteracaoConta() {
         const valores = buscarValores();
         let response = await fetch(`app/Contas/AlterarContas/${contaSelecionada}`, {
             method: 'PUT',
+            body:JSON.stringify(valores),
             headers: {
                 'Content-Type': 'application/json'
             },

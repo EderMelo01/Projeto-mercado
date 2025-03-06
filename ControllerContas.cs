@@ -27,8 +27,8 @@ public class ControleContas : ControllerBase
         db.DeleteAcount(num);
     }
     [HttpPut("AlterarContas/{num}")]
-    public void UpdateAcount([FromRoute]int num){
-    db.UpdateAcount(num);
+    public void UpdateAcount([FromRoute]int num,[FromBody]Contas contas){
+    db.UpdateAcount(contas,num);
     }
 
 }

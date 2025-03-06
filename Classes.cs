@@ -48,10 +48,16 @@ public class Pessoa
     [JsonInclude]
     public required string senha;
 }
-public class Contas
+
+public class NewBaseType
+{
+    public Lote lote;
+}
+
+public class Contas : NewBaseType
 {
 
-   
+
     public int id_conta;
     [JsonInclude]
     public required string descricao;
@@ -66,9 +72,24 @@ public class Contas
     [JsonInclude]
     public DateTime data_vencimento;
     public Prestador prestador;
-    //[JsonInclude]
-    //public int id_lote;
+    [JsonInclude]
+    public int id_cliente;
+    [JsonInclude]
+    public int id_lote;
+    public Cliente cliente;
+
+    public Lote lote;
+    
 }
+
+public class Lote
+{
+}
+
+public class Cliente
+{
+}
+
 public class Prestador
 {
     public int id_prestador;
