@@ -22,5 +22,13 @@ public class ControleContas : ControllerBase
     public IActionResult GetContas([FromRoute]int num){
         return Ok(db.GetContas(num));
     }
+    [HttpDelete ("DeletarContas/{num}") ]
+    public void DeleteAcount([FromRoute]int num){
+        db.DeleteAcount(num);
+    }
+    [HttpPut("AlterarContas/{num}")]
+    public void UpdateAcount([FromRoute]int num){
+    db.UpdateAcount(num);
+    }
 
 }

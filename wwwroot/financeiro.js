@@ -90,13 +90,58 @@ async function salvarNovaConta(tipoConta) {
 }
 
 
-function salvarAlteracaoConta() {
-    alert("Conta alterada com sucesso!");
+async function salvarAlteracaoConta() {
+    if (contaSelecionada === 0) {
+        alert("Selecione uma conta para alterar!");
+        return;
+    }
+
+    try {
+        const valores = buscarValores();
+        let response = await fetch(`app/Contas/AlterarContas/${contaSelecionada}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(valores)
+        });
+
+        if (response.ok) {
+            alert("Conta alterada com sucesso!");
+            getContas(!document.getElementById("pagar").checked);
+            return;
+        }
+        throw new Error("Erro ao alterar a conta");
+    } catch (error) {
+        console.error("Erro ao alterar conta:", error);
+    }
 }
 
-function confirmarExclusaoConta() {
-    alert("Conta excluída com sucesso!");
+
+async function confirmarExclusaoConta() {
+    if (contaSelecionada != 0) {
+        try {
+            var result = await fetch(`app/Contas/DeletarContas/${contaSelecionada}`, {
+                method: "DELETE",
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (!result.ok) {
+                throw new Error("falha ao tentar excluir");
+            }
+            getContas(!document.getElementById("pagar").checked);
+
+            alert("Conta excluída com sucesso!");
+        }
+        catch (erro) {
+            console.log(erro);
+        }
+    }
+
 }
+
+
 
 
 document.addEventListener("click", function (event) {
@@ -108,7 +153,7 @@ document.addEventListener("click", function (event) {
 async function getContas(num) {
     let corpo = document.getElementById("coluna");
     let filhos = document.getElementsByClassName("transacao");
-    contaSelecionada=0;
+    contaSelecionada = 0;
     for (i in filhos) {
         for (let lf of filhos) {
             lf.remove();
@@ -135,6 +180,8 @@ async function getContas(num) {
                 <div id="emissao2">${new Date(contas[i]["data_emissao"]).toLocaleDateString("pt-BR")}</div>
             </div>`
             corpo.appendChild(elemento);
+            if(new Date (contas[i]["data_vencimento"])==contas.status==0)
+                print("conta já baixada não é possivel alterar");
             if (new Date(contas[i]["data_vencimento"]) < new Date()) {
                 document.getElementById(contas[i]["id"]).style.backgroundColor = "#fd8c8c";
             }
@@ -152,10 +199,10 @@ document.getElementById("pagar").addEventListener("click", function () {
 document.getElementById("receber").addEventListener("click", function () {
     getContas(1);
 })
-function getId(num){
-        if (contaSelecionada != 0) {
-            document.getElementById(contaSelecionada).style.filter = "brightness(100%)";
-        }
-        contaSelecionada = num;
-        document.getElementById(contaSelecionada).style.filter = "brightness(52%)";
+function getId(num) {
+    if (contaSelecionada != 0) {
+        document.getElementById(contaSelecionada).style.filter = "brightness(100%)";
+    }
+    contaSelecionada = num;
+    document.getElementById(contaSelecionada).style.filter = "brightness(52%)";
 }

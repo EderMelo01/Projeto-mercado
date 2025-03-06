@@ -106,8 +106,8 @@ const paginas = {
             <li class="menu">Contas
                 <ul class="itens">
                     <li data-acao="novo"id="4" data-tipo="financeiro"><i class="fa fa-plus"></i>Adicionar Conta </li>
-                    <li data-acao="alterar"id="5" data-tipo="financeiro"><i class="fa fa-pencil"></i>Alterar Conta </li>
-                    <li data-acao="excluir"id="6" data-tipo="financeiro"><i class="fa fa-trash"></i>Excluir Conta </li>
+                    <li data-acao="alterar"id="5" data-tipo="financeiro"onclick="salvarAlteracaoConta()"><i class="fa fa-pencil"></i>Alterar Conta </li>
+                    <li data-acao="excluir"id="6" data-tipo="financeiro"onclick="confirmarExclusaoConta()"><i class="fa fa-trash"></i>Excluir Conta </li>
                 </ul>
             </li>
         </ul>

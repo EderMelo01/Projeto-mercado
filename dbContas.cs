@@ -68,5 +68,18 @@ namespace PrimeiroProjeto
             conexao.Close();
             return contas;
         }
+        public void DeleteAcount(int num){
+            conexao=BancoDados.Banco.Conexao();
+            MySqlCommand selectCommand = new MySqlCommand($"DELETE FROM CONTAS WHERE id_conta= {num}",conexao);
+            var result = selectCommand.ExecuteReader();
+            conexao.Close();
+        }
+        public void UpdateAcount(int num){
+            conexao=BancoDados.Banco.Conexao();
+            MySqlCommand selectCommand = new MySqlCommand($"UPDATE CONTAS SET Is_receber = true WHERE id_conta = {num}",conexao);
+            var result = selectCommand.ExecuteReader();
+            conexao.Close();
+
+        }
     }
 }
