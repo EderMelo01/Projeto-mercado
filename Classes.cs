@@ -49,12 +49,7 @@ public class Pessoa
     public required string senha;
 }
 
-public class NewBaseType
-{
-    public Lote lote;
-}
-
-public class Contas : NewBaseType
+public class Contas
 {
 
 
@@ -66,19 +61,19 @@ public class Contas : NewBaseType
     [JsonInclude]
     public decimal valor;
     [JsonInclude]
-    public int id_prestador;
+    public int? id_prestador;
     [JsonInclude]
     public DateTime data_emissao;
     [JsonInclude]
     public DateTime data_vencimento;
-    public Prestador prestador;
+    public Prestador? prestador;
     [JsonInclude]
-    public int id_cliente;
+    public int? id_cliente;
     [JsonInclude]
-    public int id_lote;
-    public Cliente cliente;
+    public int? id_lote;
+    public Cliente? cliente;
 
-    public Lote lote;
+    public Lote? lote;
     
 }
 

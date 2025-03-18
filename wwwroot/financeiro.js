@@ -91,11 +91,6 @@ async function salvarNovaConta(tipoConta) {
 
 
 async function salvarAlteracaoConta() {
-    if (contaSelecionada === 0) {
-        alert("Selecione uma conta para alterar!");
-        return;
-    }
-
     try {
         const valores = buscarValores();
         let response = await fetch(`app/Contas/AlterarContas/${contaSelecionada}`, {
@@ -117,7 +112,6 @@ async function salvarAlteracaoConta() {
         console.error("Erro ao alterar conta:", error);
     }
 }
-
 
 async function confirmarExclusaoConta() {
     if (contaSelecionada != 0) {
@@ -143,18 +137,21 @@ async function confirmarExclusaoConta() {
 }
 
 
-
-
 document.addEventListener("click", function (event) {
     if (event.target.tagName === "LI" && event.target.dataset.acao) {
-        abrirModalConta(event.target.dataset.acao, event.target.dataset.tipo);
+        if(event.target.dataset.acao!= "novo" && contaSeleciona ==0){
+            alert("Selecione uma conta");
+        }
+        else{
+            abrirModalConta(event.target.dataset.acao, event.target.dataset.tipo);
+        }
     }
 });
 
 async function getContas(num) {
     let corpo = document.getElementById("coluna");
     let filhos = document.getElementsByClassName("transacao");
-    contaSelecionada = 0;
+    contaSelecionada=0;
     for (i in filhos) {
         for (let lf of filhos) {
             lf.remove();
@@ -181,13 +178,11 @@ async function getContas(num) {
                 <div id="emissao2">${new Date(contas[i]["data_emissao"]).toLocaleDateString("pt-BR")}</div>
             </div>`
             corpo.appendChild(elemento);
-            if(new Date (contas[i]["data_vencimento"])==contas.status==0)
-                print("conta já baixada não é possivel alterar");
-            if (new Date(contas[i]["data_vencimento"]) < new Date()) {
-                document.getElementById(contas[i]["id"]).style.backgroundColor = "#fd8c8c";
-            }
-            else {
+            if(contas[i]["status"] != 0) {
                 document.getElementById(contas[i]["id"]).style.backgroundColor = "#8dfd8c";
+            }
+            else if (new Date(contas[i]["data_vencimento"]) < new Date()) {
+                document.getElementById(contas[i]["id"]).style.backgroundColor = "#fd8c8c";
             }
         }
     } catch (error) {
@@ -199,11 +194,12 @@ document.getElementById("pagar").addEventListener("click", function () {
 })
 document.getElementById("receber").addEventListener("click", function () {
     getContas(1);
-})
-function getId(num) {
-    if (contaSelecionada != 0) {
-        document.getElementById(contaSelecionada).style.filter = "brightness(100%)";
-    }
-    contaSelecionada = num;
-    document.getElementById(contaSelecionada).style.filter = "brightness(52%)";
+});
+
+function getId(num){
+        if (contaSelecionada != 0) {
+            document.getElementById(contaSelecionada).style.filter = "brightness(100%)";
+        }
+        contaSelecionada = num;
+        document.getElementById(contaSelecionada).style.filter = "brightness(52%)";
 }

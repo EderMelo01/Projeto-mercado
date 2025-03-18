@@ -61,7 +61,9 @@ namespace PrimeiroProjeto
                     { "pagador", result.GetString("nome")?? result.GetString("cpf")},
                     { "valor", result.GetDecimal("valor")},
                     { "data_emissao", result.GetDateTime("data_emissao") },
-                    { "data_vencimento", result.GetDateTime("data_vencimento") }
+                    { "data_vencimento", result.GetDateTime("data_vencimento") },
+                    {"status", result.GetInt32("status")}
+                    
                 };
                 contas.Add(conta);
             }
@@ -76,8 +78,10 @@ namespace PrimeiroProjeto
         }
         public int UpdateAcount(Contas contas, int id)
         {
+            string dataVencimentoFormatada = contas.data_vencimento.ToString("yyyy-MM-dd");
+            string dataEmissaoFormatada = contas.data_emissao.ToString("yyyy-MM-dd");
             MySqlConnection conexao = BancoDados.Banco.Conexao();
-            MySqlCommand selectCommand = new MySqlCommand($"UPDATE CONTAS set descricao='{contas.descricao}', Is_receber={contas.Is_receber}, valor='{contas.valor}',id_prestador={contas.id_prestador},id_cliente={contas.id_cliente},data_emissao='{contas.data_emissao}',data_vencimento='{contas.data_vencimento}' WHERE id_conta= {id} ", conexao);
+            MySqlCommand selectCommand = new MySqlCommand($"UPDATE CONTAS set descricao='{contas.descricao}', Is_receber={contas.Is_receber}, valor={contas.valor},id_prestador={contas.id_prestador},id_cliente={contas.id_cliente},data_emissao='{dataEmissaoFormatada}',data_vencimento='{dataVencimentoFormatada}' WHERE id_conta= {id} ", conexao);
             var result= selectCommand.ExecuteReader();
             conexao.Close();
             if(result!=null){
@@ -85,12 +89,5 @@ namespace PrimeiroProjeto
             }
             return 0;  
         }
-       
     }
 }
-
-        
-
-        
-  
-
