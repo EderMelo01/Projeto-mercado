@@ -81,13 +81,31 @@ namespace PrimeiroProjeto
             string dataVencimentoFormatada = contas.data_vencimento.ToString("yyyy-MM-dd");
             string dataEmissaoFormatada = contas.data_emissao.ToString("yyyy-MM-dd");
             MySqlConnection conexao = BancoDados.Banco.Conexao();
-            MySqlCommand selectCommand = new MySqlCommand($"UPDATE CONTAS set descricao='{contas.descricao}', Is_receber={contas.Is_receber}, valor={contas.valor},id_prestador={contas.id_prestador},id_cliente={contas.id_cliente},data_emissao='{dataEmissaoFormatada}',data_vencimento='{dataVencimentoFormatada}' WHERE id_conta= {id} ", conexao);
+            MySqlCommand selectCommand = new MySqlCommand($"UPDATE CONTAS set descricao='{contas.descricao}', Is_receber={contas.Is_receber}, valor={contas.valor},id_prestador={contas.id_prestador},data_emissao='{dataEmissaoFormatada}',data_vencimento='{dataVencimentoFormatada}' WHERE id_conta= {id} ", conexao);
             var result= selectCommand.ExecuteReader();
             conexao.Close();
             if(result!=null){
                 return result.RecordsAffected;
             }
             return 0;  
+        }
+        public Dictionary<string, dynamic> GetContaById(int id){
+            MySqlConnection conexao = BancoDados.Banco.Conexao();
+            MySqlCommand selectCommand = new MySqlCommand($"SELECT * FROM CONTAS WHERE id_conta= {id} ", conexao);
+            var result= selectCommand.ExecuteReader();
+            Dictionary<string, dynamic> conta = [];
+            while (result.Read())
+            {
+                conta = new Dictionary<string, dynamic>(){
+                    {"tipoConta", result.GetInt16("Is_receber")},
+                    {"descricao",result.GetString("descricao") },
+                    {"valor", result.GetDecimal("valor")},
+                    {"dataEmissao", result.GetDateTime("data_emissao").ToString("yyyy-MM-dd")},
+                    {"dataVencimento", result.GetDateTime("data_vencimento").ToString("yyyy-MM-dd")}
+                };
+            }
+            conexao.Close();
+            return conta;
         }
     }
 }

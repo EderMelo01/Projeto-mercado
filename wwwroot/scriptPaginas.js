@@ -124,18 +124,18 @@ const paginas = {
                 <div class="modal-body">
                     <form name="cadastroConta" id="dadosConta" action="#">
                         <div class="mb-3">
-                         <input type="radio" name="tipoConta" id="Pagar">
+                         <input type="radio" name="tipoConta" id="PagarTipo">
                         <label for="Pagar">Pagar</label>
-                        <input type="radio" name="tipoConta" id="Receber">
+                        <input type="radio" name="tipoConta" id="ReceberTipo">
                         <label for="Receber">Receber</label>
                         </div>
                          <div class="mb-3">
                             <label for="descricaoConta" class="form-label">Descrição da Conta</label>
-                            <input type="text" id="descricaoConta" name="descricao" class="form-control" required>
+                            <input type="text" id="descricao" name="descricao" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label for="valorConta" class="form-label">Valor da Conta</label>
-                            <input type="text" id="valorConta" name="valor" class="form-control" required>
+                            <input type="text" id="valor" name="valor" class="form-control" required>
                         </div>
                         <!--<div class="mb-3">
                             <label for="loteId" class="form-label">Numero do Lote </label>

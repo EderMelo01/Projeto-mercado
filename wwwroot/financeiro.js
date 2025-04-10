@@ -1,44 +1,33 @@
 let contaSelecionada = 0;
+const elementoId=(id)=>document.getElementById(id);
+async function apiRest(url, method= "GET", body= null) {
+    let corpoRequisicao= {method, headers: {'Content-Type': 'application/json'}};
+    if(body) corpoRequisicao.body= body;
+    let requisicao= await fetch(url, corpoRequisicao);
+    if(!requisicao.ok){
+        throw new Error("falha na requisicao "+ requisicao.status);  
+    }
+    const texto= await requisicao.text();
+    return texto? JSON.parse(texto) : null;
+    
+}
 
-function abrirModalConta(acao) {
+async function abrirModalConta(acao) {
     const modalTitulo = document.getElementById("tituloModalConta");
     const btnSalvar = document.getElementById("salvarConta");
-    const descricao = document.getElementById("descricaoConta");
-    const valor = document.getElementById("valorConta");
-    //const loteId = document.getElementById("loteId");
-    const dataEmissao = document.getElementById("dataEmissao");
-    const dataVencimento = document.getElementById("dataVencimento");
 
     // Ajustando título e comportamento do botão com base na ação
     if (acao === "adicionar") {
         modalTitulo.textContent = "Adicionar Conta";
         btnSalvar.textContent = "Salvar";
         btnSalvar.setAttribute("onclick", `salvarNovaConta()`);
-        descricao.disabled = false;
-        valor.disabled = false;
-        //loteId.disabled = false;
-        dataEmissao.disabled = false;
-        dataVencimento.disabled = false;
     }
     else if (acao === "alterar") {
+        preencheCampos(await getAcountById());
         modalTitulo.textContent = "Alterar Conta";
         btnSalvar.textContent = "Alterar";
         btnSalvar.setAttribute("onclick", "salvarAlteracaoConta()");
-        descricao.disabled = false;
-        valor.disabled = false;
-        // loteId.disabled = false;
-        dataEmissao.disabled = false;
-        dataVencimento.disabled = false;
-    }
-    else if (acao === "excluir") {
-        modalTitulo.textContent = "Excluir Conta";
-        btnSalvar.textContent = "Confirmar Exclusão";
-        btnSalvar.setAttribute("onclick", "confirmarExclusaoConta()");
-        descricao.disabled = true;
-        valor.disabled = true;
-        //loteId.disabled = true;
-        dataEmissao.disabled = true;
-        dataVencimento.disabled = true;
+        
     }
 
 
@@ -54,12 +43,12 @@ function limparModalConta() {
 
 function buscarValores() {
     return {
-        "descricao": document.getElementById("descricaoConta").value,
-        "valor": document.getElementById("valorConta").value,
+        "descricao": document.getElementById("descricao").value,
+        "valor": document.getElementById("valor").value,
         //"id_lote":document.getElementById("loteId").value,
         "data_emissao": document.getElementById("dataEmissao").value,
         "data_vencimento": document.getElementById("dataVencimento").value,
-        "Is_receber": !document.getElementById("Pagar").checked,
+        "Is_receber": !document.getElementById("PagarTipo").checked,
         "id_prestador": 1
     }
 }
@@ -114,7 +103,8 @@ async function salvarAlteracaoConta() {
 }
 
 async function confirmarExclusaoConta() {
-    if (contaSelecionada != 0) {
+    let contaBaixada= await getAcountById();
+    if (contaSelecionada != 0 && contaBaixada["tipoConta"] == 0) {
         try {
             var result = await fetch(`app/Contas/DeletarContas/${contaSelecionada}`, {
                 method: "DELETE",
@@ -123,7 +113,7 @@ async function confirmarExclusaoConta() {
                 }
             });
             if (!result.ok) {
-                throw new Error("falha ao tentar excluir");
+                throw new Error("falha ao tentar exclusir");
             }
             getContas(!document.getElementById("pagar").checked);
 
@@ -133,16 +123,19 @@ async function confirmarExclusaoConta() {
             console.log(erro);
         }
     }
+    else{
+        alert("Conta já baixada");
+    }
 
 }
 
 
 document.addEventListener("click", function (event) {
     if (event.target.tagName === "LI" && event.target.dataset.acao) {
-        if(event.target.dataset.acao!= "novo" && contaSeleciona ==0){
+        if(event.target.dataset.acao!= "novo" && contaSelecionada == 0){
             alert("Selecione uma conta");
         }
-        else{
+        else if(event.target.dataset.acao!= "excluir"){
             abrirModalConta(event.target.dataset.acao, event.target.dataset.tipo);
         }
     }
@@ -202,4 +195,25 @@ function getId(num){
         }
         contaSelecionada = num;
         document.getElementById(contaSelecionada).style.filter = "brightness(52%)";
+}
+async function getAcountById(){
+    try {
+        let json = await apiRest(`app/Contas/alterar/${contaSelecionada}`);
+        return json;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function preencheCampos(json){
+    let formConta= new FormData(document.getElementById("dadosConta"));
+        formConta.forEach((value, key)=>{
+            elementoId(key).value= json[key];
+        });
+        if(!json["tipoConta"]){
+            elementoId("PagarTipo").checked = true;
+        }
+        else{
+            elementoId("ReceberTipo").checked = true;
+        }
 }

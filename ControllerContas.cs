@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using ZstdSharp.Unsafe;
 
 [ApiController]
 [Route("app/Contas")]
@@ -29,6 +31,11 @@ public class ControleContas : ControllerBase
     [HttpPut("AlterarContas/{num}")]
     public void UpdateAcount([FromRoute]int num,[FromBody]Contas contas){
     db.UpdateAcount(contas,num);
+    }
+    [HttpGet("alterar/{id}")]
+    public IActionResult GetAcountById([FromRoute]int id){
+        Dictionary<string,dynamic> valores=db.GetContaById(id);
+        return valores.Count ==0? NotFound() : Ok(valores);
     }
 
 }
