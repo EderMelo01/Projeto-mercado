@@ -3,80 +3,175 @@ const paginaInicial = document.getElementById("conteiner").innerHTML;
 const paginas = {
     "/home": paginaInicial,
     "/produto": `
-    <div id="coluna" class="coluna">
-        <div>
-            <input type="text" id="filtroID" placeholder="Digite o Produto"></input>
+<div class="main-content">
+        <div class="header">
+            <h1>Produtos</h1>
+            <h2>Gerenciar Produtos</h2>
         </div>
-        <aside>
-            <div  class="expandidor"></div>
-            <div  class="nome-codigo">Nome</div>
-            <div  class="valor">Valor venda</div>
-            <div  class="nome-codigo">Código de barras</div>
-            <div class="divididor"></div>
-        </aside>
-    </div>
-    
-    <nav>
-        <ul>
-            <li class="menu">Produtos
-                <ul class="itens">
-                    <li onclick="ifremeProduto()"><i class="fa fa-plus"></i>Novo</li>
-                    <li onclick= "alteraProduto()"><i class="fa fa-pencil"></i>Alterar</li>
-                    <li onclick= "deleteProduto()"> <i class="fa fa-trash"></i>Excluir</li>
-                </ul>
-                <ul class="itens">
-                    <li class= "BtStatus" onclick="getProdutos()"><i></i>Todos</li>
-                    <li class= "BtStatus" onclick="getProdutos(1)"><i></i>Ativos</li>
-                    <li class= "BtStatus" onclick="getProdutos(0)"><i></i>Inativos</li>
-                </ul>
-                <ul class="itens">
-                    <li class= "BtStatus" onclick="Inative(1)"><i></i>Ativar</li>
-                    <li class= "BtStatus" onclick="Inative(0)"><i></i>Inativar</li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="tituloModal">Título do Modal</h5>
-                    <button type="button" class="btn-close" onclick="limparModal()" aria-label="Fechar"></button>
+
+        <div class="content">
+            <!-- Status Radio Buttons -->
+            <div class="status-section">
+                <div class="radio-group">
+                    <input type="radio" id="ativo" name="status" value="ativo" checked>
+                    <label for="ativo">Ativo</label>
                 </div>
-                <div class="modal-body">
-                    <form name="cadastroProduto" id="dados" action="#">
-                        <img id="imgProduto" width="150" height="150">
-                        <div class="mb-3">
-                            <label for="pnome" class="form-label">Nome Produto</label>
-                            <input type="text" id="pnome" name="pnome" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="pcodigo" class="form-label">Código de barras</label>
-                            <input type="number" id="pcodigo" name="codigo" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="ppreco" class="form-label">Preço Produto</label>
-                            <input type="text" id="ppreco" name="ppreco" class="form-control" required>
-                        </div>
-                        <p>Perecível:</p>
-                        <div class="form-check">
-                            <input type="radio" id="perecivelSim" name="perecivel" value="1" class="form-check-input">
-                            <label for="perecivelSim" class="form-check-label">Sim</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" id="perecivelNao" name="perecivel" value="0" class="form-check-input">
-                            <label for="perecivelNao" class="form-check-label">Não</label>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="limparModal()">Fechar</button>
-                            <button id="salvar" type="button" onclick="adicionaProduto()" class="btn btn-primary">Salvar</button>
-                        </div>
-                    </form>
+                <div class="radio-group">
+                    <input type="radio" id="inativo" name="status" value="inativo">
+                    <label for="inativo">Inativo</label>
                 </div>
+            </div>
+
+            <!-- Search Section -->
+            <div class="search-section">
+                <input type="text" class="search-input" placeholder="Digite o nome do produto" id="searchInput">
+                <button class="search-button" onclick="searchProduct()">Procurar</button>
+            </div>
+
+            <!-- Product Form -->
+            <form id="productForm">
+                <input type="hidden" id="productId" name="productId">
+                <div class="form-container">
+                    <div class="form-fields">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" placeholder="Nome do produto">
+                            </div>
+                            <div class="form-group">
+                                <label for="preco">Valor de venda</label>
+                                <input type="text" id="preco" name="preco" placeholder="0,00">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="codigo">Código de barras</label>
+                            <input type="text" id="codigo" name="codigo" placeholder="Código de barras">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="perecivel">Produto Perecível</label>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="perecivel" name="perecivel">
+                                <label for="perecivel">Este produto é perecível</label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-save" onclick="saveProduct()">Salvar</button>
+                            <button type="button" class="btn btn-cancel" onclick="clearForm()">Cancelar</button>
+                        </div>
+                    </div>
+
+                    <!-- Image Section -->
+                    <div class="image-section">
+                        <div class="image-container" id="imageContainer">
+                            <div class="image-placeholder">
+                                <p>Imagem do Produto</p>
+                                <p style="font-size: 12px; margin-top: 5px;">Clique em "Selecionar Imagem" para adicionar</p>
+                            </div>
+                        </div>
+                        <div class="image-upload">
+                            <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="previewImage(event)">
+                            <button type="button" class="upload-button" onclick="document.getElementById('imageInput').click()">
+                                Selecionar Imagem
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Products Table -->
+            <div class="table-section">
+                <table class="table">
+                    <thead class="table-header">
+                        <tr>
+                            <th>Código</th>
+                            <th>Nome</th>
+                            <th>Preço</th>
+                            <th>Perecível</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody">
+                        <tr data-id="1">
+                            <td>001</td>
+                            <td>Arroz Branco 5kg</td>
+                            <td class="price">R$ 25,50</td>
+                            <td><span class="perecivel-badge perecivel-nao">Não</span></td>
+                            <td><span class="status-badge status-active">Ativo</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-action btn-edit" onclick="editProduct(1)">Alterar</button>
+                                    <button class="btn-action btn-inactive" onclick="toggleProductStatus(1)">Inativar</button>
+                                    <button class="btn-action btn-delete" onclick="deleteProduct(1)">Excluir</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-id="2">
+                            <td>002</td>
+                            <td>Feijão Preto 1kg</td>
+                            <td class="price">R$ 10,30</td>
+                            <td><span class="perecivel-badge perecivel-nao">Não</span></td>
+                            <td><span class="status-badge status-active">Ativo</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-action btn-edit" onclick="editProduct(2)">Alterar</button>
+                                    <button class="btn-action btn-inactive" onclick="toggleProductStatus(2)">Inativar</button>
+                                    <button class="btn-action btn-delete" onclick="deleteProduct(2)">Excluir</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-id="3">
+                            <td>003</td>
+                            <td>Leite Integral 1L</td>
+                            <td class="price">R$ 4,50</td>
+                            <td><span class="perecivel-badge perecivel-sim">Sim</span></td>
+                            <td><span class="status-badge status-active">Ativo</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-action btn-edit" onclick="editProduct(3)">Alterar</button>
+                                    <button class="btn-action btn-inactive" onclick="toggleProductStatus(3)">Inativar</button>
+                                    <button class="btn-action btn-delete" onclick="deleteProduct(3)">Excluir</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-id="4">
+                            <td>004</td>
+                            <td>Açúcar Cristal 1kg</td>
+                            <td class="price">R$ 4,50</td>
+                            <td><span class="perecivel-badge perecivel-nao">Não</span></td>
+                            <td><span class="status-badge status-active">Ativo</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-action btn-edit" onclick="editProduct(4)">Alterar</button>
+                                    <button class="btn-action btn-inactive" onclick="toggleProductStatus(4)">Inativar</button>
+                                    <button class="btn-action btn-delete" onclick="deleteProduct(4)">Excluir</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr data-id="5">
+                            <td>005</td>
+                            <td>Pão Francês</td>
+                            <td class="price">R$ 0,50</td>
+                            <td><span class="perecivel-badge perecivel-sim">Sim</span></td>
+                            <td><span class="status-badge status-inactive">Inativo</span></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-action btn-edit" onclick="editProduct(5)">Alterar</button>
+                                    <button class="btn-action btn-inactive" onclick="toggleProductStatus(5)">Ativar</button>
+                                    <button class="btn-action btn-delete" onclick="deleteProduct(5)">Excluir</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-    `,
+
+   `,
     "/financeiro": `
     <div id="coluna" class="coluna">
         <h2>Financeiro</h2>
