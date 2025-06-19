@@ -25,12 +25,10 @@ const paginas = {
             <!-- Search Section -->
             <div class="search-section">
                 <input type="text" class="search-input" placeholder="Digite o nome do produto" id="searchInput">
-                <button class="search-button" onclick="searchProduct()">Procurar</button>
             </div>
 
             <!-- Product Form -->
             <form id="productForm">
-                <input type="hidden" id="productId" name="productId">
                 <div class="form-container">
                     <div class="form-fields">
                         <div class="form-row">
@@ -58,8 +56,8 @@ const paginas = {
                         </div>
 
                         <div class="form-actions">
-                            <button type="button" class="btn btn-save" onclick="saveProduct()">Salvar</button>
-                            <button type="button" class="btn btn-cancel" onclick="clearForm()">Cancelar</button>
+                            <button type="button" class="btn btn-save" onclick="saveProduct()" id= "btn btn-save">Salvar</button>
+                            <button type="button" class="btn btn-cancel" onclick="clearForm()" id= "btn btn-cancel">Cancelar</button>
                         </div>
                     </div>
 
@@ -81,7 +79,6 @@ const paginas = {
                 </div>
             </form>
 
-            <!-- Products Table -->
             <div class="table-section">
                 <table class="table">
                     <thead class="table-header">
@@ -95,7 +92,7 @@ const paginas = {
                         </tr>
                     </thead>
                     <tbody id="productsTableBody">
-                        <tr data-id="1">
+                        <tr class= "ProdutoListado" data-id="1">
                             <td>001</td>
                             <td>Arroz Branco 5kg</td>
                             <td class="price">R$ 25,50</td>
@@ -109,7 +106,7 @@ const paginas = {
                                 </div>
                             </td>
                         </tr>
-                        <tr data-id="2">
+                        <tr class= "ProdutoListado" data-id="2">
                             <td>002</td>
                             <td>Feijão Preto 1kg</td>
                             <td class="price">R$ 10,30</td>
@@ -123,7 +120,7 @@ const paginas = {
                                 </div>
                             </td>
                         </tr>
-                        <tr data-id="3">
+                        <tr class= "ProdutoListado" data-id="3">
                             <td>003</td>
                             <td>Leite Integral 1L</td>
                             <td class="price">R$ 4,50</td>
@@ -137,7 +134,7 @@ const paginas = {
                                 </div>
                             </td>
                         </tr>
-                        <tr data-id="4">
+                        <tr class= "ProdutoListado" data-id="4">
                             <td>004</td>
                             <td>Açúcar Cristal 1kg</td>
                             <td class="price">R$ 4,50</td>
@@ -148,20 +145,6 @@ const paginas = {
                                     <button class="btn-action btn-edit" onclick="editProduct(4)">Alterar</button>
                                     <button class="btn-action btn-inactive" onclick="toggleProductStatus(4)">Inativar</button>
                                     <button class="btn-action btn-delete" onclick="deleteProduct(4)">Excluir</button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr data-id="5">
-                            <td>005</td>
-                            <td>Pão Francês</td>
-                            <td class="price">R$ 0,50</td>
-                            <td><span class="perecivel-badge perecivel-sim">Sim</span></td>
-                            <td><span class="status-badge status-inactive">Inativo</span></td>
-                            <td>
-                                <div class="action-buttons">
-                                    <button class="btn-action btn-edit" onclick="editProduct(5)">Alterar</button>
-                                    <button class="btn-action btn-inactive" onclick="toggleProductStatus(5)">Ativar</button>
-                                    <button class="btn-action btn-delete" onclick="deleteProduct(5)">Excluir</button>
                                 </div>
                             </td>
                         </tr>
